@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet private weak var amountEntered: UITextField!
+    @IBOutlet private weak var descriptionLabel: UITextField!
+    @IBOutlet private weak var testLabel: UILabel!
 
     
-    
-    @IBOutlet private weak var myLabel: UILabel!
     
     
     override func viewDidLoad() {
