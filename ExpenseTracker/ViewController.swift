@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     
     
-    
+    @IBOutlet private weak var myLabel: UILabel!
     
     
     override func viewDidLoad() {
