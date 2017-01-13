@@ -9,23 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet private weak var amountEntered: UITextField!
+    
+    // MARK: Properties
+    @IBOutlet private weak var appName: UITextField!
+    @IBOutlet weak var switchAppleAppStore: UISwitch!
+    @IBOutlet weak var switchGooglePlayStore: UISwitch!
+    @IBOutlet weak var labelApple: UILabel!
+    
+    
+    
+    
+
 
     
-    
-    @IBOutlet private weak var myLabel: UILabel!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    // MARK: Actions
+
+    @IBAction func switchChanged(_ sender: UISwitch) {
+
+        // This code works - just testing to see how switches work
+//        if (switchAppleAppStore.isOn) {
+//            labelApple.text! = "On!"
+//        } else {
+//            labelApple.text! = "Off!"
+//        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
+
+/*
+    Backlog
+ 
+    Put switches into a Table Row. This is meant to be best practice.
+*/
