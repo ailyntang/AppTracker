@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet private weak var amountEntered: UITextField!
     @IBOutlet private weak var descriptionLabel: UITextField!
     @IBOutlet private weak var testLabel: UILabel!
+    @IBOutlet var dateChooser: UIDatePicker!
+    @IBOutlet var lblOutput: UILabel!
 
     
     // MARK: Functions
@@ -32,20 +34,32 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func showExpenseButton(_ sender: UIButton) {
-        var displayAmount = "0.00"
+    
+    // MARK: UI Functions
+    
+    @IBAction func addExpenseButton(_ sender: UIButton) {
+        var displayAmount = "0.0"
         var displayDescription = "nothing"
         
         if let amount = amountEntered.text, !amount.isEmpty {
             displayAmount = amount
+            
+            // This works for $3.095 -> $3.10, but $3.9 remains $3.9
+//            displayAmount = String(round(Double(amount)! * 100) / 100)
         }
     
         if let label = descriptionLabel.text, !label.isEmpty {
             displayDescription = label
         }
  
-        testLabel.text = "You spent $\(displayAmount) on \(displayDescription)"        
+        testLabel.text = "You spent $\(displayAmount) on \(displayDescription)"
+        
+        amountEntered.resignFirstResponder()
+        descriptionLabel.resignFirstResponder()
     }
 
+    @IBAction func dateChosen(_ sender: UIDatePicker) {
+        
+    }
 }
 

@@ -26,7 +26,7 @@
                                 <rect key="frame" x="16" y="84" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gY-Mc-nTw">
                                 <rect key="frame" x="16" y="122" width="288" height="30"/>
@@ -35,20 +35,37 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yG-Xl-kPS">
-                                <rect key="frame" x="23" y="306" width="269" height="21"/>
+                                <rect key="frame" x="16" y="198" width="269" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NA3-wA-BKf">
-                                <rect key="frame" x="204" y="160" width="100" height="30"/>
+                                <rect key="frame" x="210" y="160" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Show expense"/>
+                                <state key="normal" title="Add expense"/>
                                 <connections>
-                                    <action selector="showExpenseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m5M-HO-nQ4"/>
+                                    <action selector="addExpenseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSR-KB-I8y"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wDY-u9-ND6">
+                                <rect key="frame" x="16" y="252" width="288" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="505974940.176485">
+                                    <!--2017-01-13 04:35:40 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="dateChosen:" destination="BYZ-38-t0r" eventType="valueChanged" id="fd3-6f-QdC"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-sg-yiY">
+                                <rect key="frame" x="16" y="483" width="283" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -66,7 +83,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="amountEntered" destination="oku-FX-yhC" id="52R-Ts-nR4"/>
+                        <outlet property="dateChooser" destination="wDY-u9-ND6" id="zsH-9H-mRh"/>
                         <outlet property="descriptionLabel" destination="6gY-Mc-nTw" id="WdN-wi-nu3"/>
+                        <outlet property="lblOutput" destination="xJa-sg-yiY" id="dpj-sQ-0aT"/>
                         <outlet property="testLabel" destination="9yG-Xl-kPS" id="QVW-UI-eee"/>
                     </connections>
                 </viewController>
