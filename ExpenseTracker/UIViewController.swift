@@ -32,7 +32,6 @@ class ViewController: UIViewController {
 
     
 
-
     
     // MARK: Actions
 
@@ -40,7 +39,6 @@ class ViewController: UIViewController {
         labelAppName.text = appName.text!
         appName.text = ""
         appName.resignFirstResponder()
-        
     }
     
     @IBAction func switchChangedApple(_ sender: UISwitch) {
