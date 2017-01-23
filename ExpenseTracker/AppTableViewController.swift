@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class AppTableViewController: UITableViewController {
 
     let cellIdentifier = "AppTableViewCell"
     var apps: [App] = []
@@ -99,6 +99,18 @@ class TableViewController: UITableViewController {
     }
     */
 
+    
+    // MARK: Actions
+    @IBAction func unwindToAppList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.source as? AddAppViewController, let app = sourceViewController.app {
+            // Add a new app
+            let newIndexPath = IndexPath(row: apps.count, section: 0)
+            apps.append(app)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
+    
     
     // MARK: Private Methods
     private func loadSampleApps() {

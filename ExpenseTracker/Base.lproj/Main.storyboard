@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -230,12 +231,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2592.8000000000002" y="139.880059970015"/>
+            <point key="canvasLocation" x="4800.8000000000002" y="139.880059970015"/>
         </scene>
         <!--List of apps-->
         <scene sceneID="2Xu-rs-Cey">
             <objects>
-                <tableViewController id="KUY-md-MIb" customClass="TableViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="KUY-md-MIb" customClass="AppTableViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="9fw-EU-jLU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEt-Lc-Dgh" id="lOE-uw-Yio">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-Ka-Vrc">
@@ -281,7 +282,13 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List of apps" id="h1p-Ep-LvK"/>
+                    <navigationItem key="navigationItem" title="List of apps" id="h1p-Ep-LvK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="riA-oU-eQM">
+                            <connections>
+                                <segue destination="8J2-wg-g5d" kind="presentation" id="xxD-S8-zCM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9bx-WW-fN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,6 +312,91 @@
             </objects>
             <point key="canvasLocation" x="-239.19999999999999" y="139.880059970015"/>
         </scene>
+        <!--New App-->
+        <scene sceneID="Cxx-S7-pry">
+            <objects>
+                <viewController id="O9o-8U-PnS" customClass="AddAppViewController" customModule="ExpenseTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bf8-Pd-IA0"/>
+                        <viewControllerLayoutGuide type="bottom" id="bpd-Gs-0IY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BWC-P1-mjA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="eSB-am-Zey">
+                                <rect key="frame" x="16" y="84" width="343" height="434"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name of new app" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ocj-08-vM0">
+                                        <rect key="frame" x="86.5" y="0.0" width="170" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter current rating" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d2X-fx-olS">
+                                        <rect key="frame" x="98" y="38" width="147" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter most recent release date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QmZ-W6-OcB">
+                                        <rect key="frame" x="62" y="76" width="219.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Uk2-5e-qCn">
+                                        <rect key="frame" x="11.5" y="114" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Prf-wl-nK5"/>
+                                            <constraint firstAttribute="height" constant="320" id="XO2-ej-8jr"/>
+                                            <constraint firstAttribute="width" secondItem="Uk2-5e-qCn" secondAttribute="height" multiplier="1:1" id="d95-yN-Kkb"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Mf6-0z-fDz" appends="YES" id="AIq-hY-bvK"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eSB-am-Zey" firstAttribute="leading" secondItem="BWC-P1-mjA" secondAttribute="leadingMargin" id="1jg-dc-LD6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eSB-am-Zey" secondAttribute="trailing" id="ICz-OR-4Zu"/>
+                            <constraint firstItem="eSB-am-Zey" firstAttribute="top" secondItem="Bf8-Pd-IA0" secondAttribute="bottom" constant="20" id="c7g-00-0Qx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New App" id="59c-9d-tiF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BzN-es-RTN">
+                            <connections>
+                                <action selector="cancel:" destination="O9o-8U-PnS" id="zNz-V0-UQL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ubM-4K-lPI">
+                            <connections>
+                                <segue destination="zcv-P0-mcd" kind="unwind" unwindAction="unwindToAppListWithSender:" id="FAt-FB-nec"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dateTextField" destination="QmZ-W6-OcB" id="NM9-D9-y3Q"/>
+                        <outlet property="nameTextField" destination="Ocj-08-vM0" id="R4K-ii-4Hs"/>
+                        <outlet property="photoImageView" destination="Uk2-5e-qCn" id="jDf-Nv-J8V"/>
+                        <outlet property="ratingTextField" destination="d2X-fx-olS" id="pAw-bg-ak1"/>
+                        <outlet property="saveButton" destination="ubM-4K-lPI" id="9jE-rm-FDl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcv-kt-azx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zcv-P0-mcd" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Mf6-0z-fDz">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="O9o-8U-PnS" id="E6f-x8-5Ob"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2919.1999999999998" y="136.28185907046478"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="njD-Nq-z29">
             <objects>
@@ -321,7 +413,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OpD-Wh-m2a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653.5999999999999" y="139.880059970015"/>
+            <point key="canvasLocation" x="4080.8000000000002" y="139.880059970015"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Xu-CN-ojd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8J2-wg-g5d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xCk-t0-LvX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O9o-8U-PnS" kind="relationship" relationship="rootViewController" id="wMd-ml-B7J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Akl-9b-Zpd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1980" y="136.28185907046478"/>
         </scene>
     </scenes>
     <resources>
