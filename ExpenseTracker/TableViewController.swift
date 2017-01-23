@@ -10,19 +10,14 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let cellIdentifier = "CellIdentifier"
-    var fruits: [String] = []
+    let cellIdentifier = "AppTableViewCell"
+    var apps: [App] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fruits = ["Apple", "pineapple", "banana", "orange"]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Load the sample data
+        loadSampleApps()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,22 +28,27 @@ class TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return fruits.count
+        return apps.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-
-        // Configure the cell...
-        let fruit = fruits[indexPath.row]
-        cell.textLabel?.text = fruit
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? AppTableViewCell else {
+            fatalError("The dequeued cell is not an instance of AppTableViewCell")
+        }
+        
+        // Fetches the approporiate app for the data source layout
+        let app = apps[indexPath.row]
+        
+        cell.nameLabel.text = app.name
+        cell.photoImageView.image = app.photo
+        cell.ratingControl.rating = app.rating
+        cell.dateLabel.text = app.date
 
         return cell
     }
@@ -99,6 +99,28 @@ class TableViewController: UITableViewController {
     }
     */
 
+    
+    // MARK: Private Methods
+    private func loadSampleApps() {
+        let photo1 = UIImage(named: "coles")
+        let photo2 = UIImage(named: "citylink")
+        let photo3 = UIImage(named: "transport")
+        
+        guard let app1 = App(name: "Coles", photo: photo1, rating:3, date: "2-Mar-2016") else {
+            fatalError("Unable to instantiate app1")
+        }
+        
+        guard let app2 = App(name: "CityLink", photo: photo2, rating: 5, date: "5-May-2016") else {
+            fatalError("Unable to instantiate app2")
+        }
+        
+        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4, date: "30-Dec-2016") else {
+            fatalError("Unable to instantiate app3")
+        }
+        
+        apps += [app1, app2, app3]
+    }
+    
 }
 
 

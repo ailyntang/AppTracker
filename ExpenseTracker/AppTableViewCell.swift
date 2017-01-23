@@ -9,6 +9,13 @@
 import UIKit
 
 class AppTableViewCell: UITableViewCell {
+    
+    // MARK: Properties
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
+    @IBOutlet weak var dateLabel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
