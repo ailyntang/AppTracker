@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ReviewOptionsViewController: UIViewController {
     
     // MARK: Properties
     @IBOutlet private weak var appName: UITextField!
