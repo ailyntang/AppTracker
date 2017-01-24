@@ -12,12 +12,9 @@ class RatingControl: UIStackView {
     
     // MARK: Properties
     private var ratingButtons = [UIButton]()
-
-//    var rating = 0
     
-    // If I comment out this section, then the stars are all empty stars
-    // When I use the didSet updateButtonSelectionStates, the stars on the "list of apps" are filled in correctly
-    // However the stars on the "reviews" scene are all 2 filled, 3 empty
+    
+    // Critical, don't delete. If I comment out this section, then the stars are all empty stars
     var rating = 0 {
         didSet {
             updateButtonSelectionStates()
@@ -51,6 +48,9 @@ class RatingControl: UIStackView {
         let bundle = Bundle(for: type(of: self))
         let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+//        let halfStar = UIImage(named: "halfStar", in: bundle, compatibleWith: self.traitCollection)
+        
+        
         
         
         for _ in 0..<5 {
@@ -59,18 +59,41 @@ class RatingControl: UIStackView {
             
             // Set button images
             button.setImage(emptyStar, for: .normal)
-            button.setImage(filledStar, for: .selected)
             
+            if rating % 1 == 0 {
+                button.setImage(filledStar, for: .selected)
+                
+            }
             // Add the button to the stack
             addArrangedSubview(button)
             
             // Add the new button to the rating button array
             ratingButtons.append(button)
+            
         }
         
-
+        
+        
+//        // This is the original for loop
+//        for _ in 0..<5 {
+//            // Create the button
+//            let button = UIButton()
+//            
+//            // Set button images
+//            button.setImage(emptyStar, for: .normal)
+//            button.setImage(filledStar, for: .selected)
+//            button.setImage(halfStar, for: .selected)
+//            
+//            // Add the button to the stack
+//            addArrangedSubview(button)
+//            
+//            // Add the new button to the rating button array
+//            ratingButtons.append(button)
+//        }
+        
         // This doesn't seem to do anything. it doesn't hinder or help with the right number of stars on "list of apps" or "reviews"
-//        updateButtonSelectionStates()
+        // However it seems most logical to put it here rather than in the var rating declaration, so I've left it in,
+        updateButtonSelectionStates()
     }
     
     private func updateButtonSelectionStates() {
