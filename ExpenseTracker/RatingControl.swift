@@ -78,9 +78,10 @@ class RatingControl: UIStackView {
             button.setImage(filledStar, for: .selected)
             
             // Add constraints
+            // These contraints determine the size of the stars in the ReviewTableViewCell
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: 14.0).isActive = true
+            button.widthAnchor.constraint(equalToConstant: 14.0).isActive = true
             
             // Setup the button action
             // This is for setting the rating. But for my app, the rating will always be read only.

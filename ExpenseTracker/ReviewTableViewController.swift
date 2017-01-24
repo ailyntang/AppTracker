@@ -15,7 +15,7 @@ class ReviewTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        loadSampleReviews()
+        loadSampleReviews()
 
     }
 
@@ -49,6 +49,8 @@ class ReviewTableViewController: UITableViewController {
         cell.reviewLabel.text = review.review
         cell.ratingControl.rating = review.app.rating
         
+        cell.dateLabel.font = UIFont.systemFont(ofSize: 12)
+        cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
 
         return cell
     }
