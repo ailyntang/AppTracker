@@ -47,7 +47,7 @@ class ReviewTableViewController: UITableViewController {
         cell.dateLabel.text = review.reviewDate
         cell.titleLabel.text = review.title
         cell.reviewLabel.text = review.review
-        cell.ratingControl.rating = review.app.rating
+        cell.ratingControl.rating = review.reviewRating
         
         cell.dateLabel.font = UIFont.systemFont(ofSize: 12)
         cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
@@ -59,18 +59,16 @@ class ReviewTableViewController: UITableViewController {
     // MARK: Private Methods
     
     private func loadSampleReviews() {
-        let photo1 = UIImage(named: "coles")
-        let app1 = App(name: "Coles", photo: photo1, rating: 2, date: "1 Jan 2010")
         
-        guard let review1 = Review(app: app1!, reviewDate: "1 Jan 2017", reviewRating: 5, title: "Test - really? app!", review: "so amazing, would recommend to all my friends ") else {
+        guard let review1 = Review(appName: "Coles", reviewDate: "1 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
             fatalError("Unable to instantiate review 1")
         }
         
-        guard let review2 = Review(app: app1!, reviewDate: "13 Jan 2017", reviewRating: 1, title: "Crap", review: "where are the prices?") else {
+        guard let review2 = Review(appName: "Coles", reviewDate: "13 Jan 2017", reviewRating: 1, title: "Crap", review: "where are the prices?") else {
             fatalError("Unable to instantiate review 2")
         }
         
-        guard let review3 = Review(app: app1!, reviewDate: "22 Jan 2017", reviewRating: 4, title: "Great app", review: "Love the design, it's so much better than the old app.") else {
+        guard let review3 = Review(appName: "Coles", reviewDate: "22 Jan 2017", reviewRating: 4, title: "Great app", review: "Love the design, it's so much better than the old app.") else {
             fatalError("Unable to instantiate review 2")
         }
 
