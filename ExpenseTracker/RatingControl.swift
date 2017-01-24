@@ -33,23 +33,23 @@ class RatingControl: UIStackView {
     
     
     // MARK: Button Action
-    func ratingButtonTapped(button: UIButton) {
-        guard let index = ratingButtons.index(of: button) else {
-            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
-        }
-        
-        // Calculate the rating of the selected button
-        let selectedRating = index + 1
-        
-        if selectedRating == rating {
-            // If the selected star represents the current rating, reset ther ating to 0
-            rating = 0
-        } else {
-            // Otherwise set the rating to the selected star
-            rating = selectedRating
-        }
-        
-    }
+//    func ratingButtonTapped(button: UIButton) {
+//        guard let index = ratingButtons.index(of: button) else {
+//            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
+//        }
+//        
+//        // Calculate the rating of the selected button
+//        let selectedRating = index + 1
+//        
+//        if selectedRating == rating {
+//            // If the selected star represents the current rating, reset ther ating to 0
+//            rating = 0
+//        } else {
+//            // Otherwise set the rating to the selected star
+//            rating = selectedRating
+//        }
+//        
+//    }
     
     
     // MARK: Private Methods
@@ -79,13 +79,13 @@ class RatingControl: UIStackView {
             
             // Add constraints
             // These contraints determine the size of the stars in the ReviewTableViewCell
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 14.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 14.0).isActive = true
+//            button.translatesAutoresizingMaskIntoConstraints = false
+//            button.heightAnchor.constraint(equalToConstant: 14.0).isActive = true
+//            button.widthAnchor.constraint(equalToConstant: 14.0).isActive = true
             
             // Setup the button action
             // This is for setting the rating. But for my app, the rating will always be read only.
-            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
+//            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
             
             // Add the button to the stack
             addArrangedSubview(button)
