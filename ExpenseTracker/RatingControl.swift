@@ -11,16 +11,9 @@ import UIKit
 class RatingControl: UIStackView {
     
     // MARK: Properties
-//    private var ratingButtons = [UIButton]()
     private var ratingImages = [UIImageView]()
-    
-    // Critical, don't delete. If I comment out this section, then the stars are all empty stars
-    var rating = 0.0 {
-        didSet {
-            updateButtonSelectionStates()
-        }
-    }
-    
+    var rating = 2.0
+
     
     // MARK: Initialization
     override init(frame: CGRect) {
@@ -37,11 +30,11 @@ class RatingControl: UIStackView {
     // MARK: Private Methods
     private func setupButtons() {
         
-//        // Clear any existing buttons
-//        for button in ratingButtons {
-//            removeArrangedSubview(button)
-//            button.removeFromSuperview()
-//        }
+        // Clear any existing images
+        for image in ratingImages {
+            removeArrangedSubview(image)
+            image.removeFromSuperview()
+        }
         ratingImages.removeAll()
         
         // Load button images
@@ -49,33 +42,28 @@ class RatingControl: UIStackView {
         let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
         let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
         let halfStar = UIImage(named: "halfStar", in: bundle, compatibleWith: self.traitCollection)
+
         
-        
-        
-        
-        for _ in 0..<5 {
-            // Create the button
-            let image = UIImageView(image: halfStar)
+        for index in 0..<5 {
+
+            var image = UIImageView()
             
-            // Determine half star vs filled star
-//            if fmod(rating, 1) == 0 {
-//                button = filledStar!
-//                
-//            }
-            // Add the button to the stack
+            // Fill in full, half or empty stars according to the rating
+            if Double(index) < (rating - 1) {
+                image = UIImageView(image: filledStar)
+            } else if (Double(index) < rating) && (fmod(rating, 1) != 0) {
+                image = UIImageView(image: halfStar)
+            } else if (Double(index) < rating) && (fmod(rating, 1) == 0) {
+                image = UIImageView(image: filledStar)
+            } else {
+                image = UIImageView(image: emptyStar)
+            }
+            
+            // Add the image to the stack
             addArrangedSubview(image)
             
-            // Add the new button to the rating button array
+            // Add the new image to the rating image array
             ratingImages.append(image)
-        }
-
-        updateButtonSelectionStates()
-    }
-    
-    private func updateButtonSelectionStates() {
-        for (index, image) in ratingImages.enumerated() {
-            // If the index of a button is less than the rating, that button should be selected.
-//            button.isSelected = Double(index) < rating
         }
     }
     
