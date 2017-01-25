@@ -14,14 +14,14 @@ class Review {
     
     var appName: String
     var reviewDate: String
-    var reviewRating: Int
+    var reviewRating: Double
     var title: String
     var review: String
     
     
     // MARK: Initialization
     
-    init?(appName: String, reviewDate: String, reviewRating: Int, title: String, review: String) {
+    init?(appName: String, reviewDate: String, reviewRating: Double, title: String, review: String) {
     
         // Initialization should fail if there is no name or the rating is negative
         if appName.isEmpty || reviewRating < 0 {

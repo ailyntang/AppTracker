@@ -13,13 +13,14 @@ class RatingControl: UIStackView {
     // MARK: Properties
     private var ratingButtons = [UIButton]()
     
-    
     // Critical, don't delete. If I comment out this section, then the stars are all empty stars
-    var rating = 0 {
+    var rating = 0.0 {
         didSet {
             updateButtonSelectionStates()
         }
     }
+    
+    
 
     
     // MARK: Initialization
@@ -54,13 +55,18 @@ class RatingControl: UIStackView {
         
         
         for _ in 0..<5 {
+            
             // Create the button
             let button = UIButton()
             
+            
             // Set button images
             button.setImage(emptyStar, for: .normal)
+//            button.setImage(filledStar, for: .selected)
             
-            if rating % 1 == 0 {
+            // Determine half star vs filled star
+            // % doesn't work for double
+            if fmod(rating, 1) == 0 {
                 button.setImage(filledStar, for: .selected)
                 
             }
@@ -99,7 +105,7 @@ class RatingControl: UIStackView {
     private func updateButtonSelectionStates() {
         for (index, button) in ratingButtons.enumerated() {
             // If the index of a button is less than the rating, that button should be selected.
-            button.isSelected = index < rating
+            button.isSelected = Double(index) < rating
         }
     }
     

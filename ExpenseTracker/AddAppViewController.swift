@@ -102,7 +102,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         let name = nameTextField.text ?? ""
         let photo = photoImageView.image
-        let rating = Int(ratingTextField.text!)!
+        let rating = Double(ratingTextField.text!)!
         let date = dateTextField.text ?? ""
         
         // Set the app to be passed to AppTableViewController after the unwind segue
