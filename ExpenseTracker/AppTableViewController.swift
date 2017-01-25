@@ -72,7 +72,7 @@ class AppTableViewController: UITableViewController {
         let photo2 = UIImage(named: "citylink")
         let photo3 = UIImage(named: "transport")
         
-        guard let app1 = App(name: "Coles", photo: photo1, rating:3, date: "2-Mar-2016") else {
+        guard let app1 = App(name: "Coles", photo: photo1, rating:3.5, date: "2-Mar-2016") else {
             fatalError("Unable to instantiate app1")
         }
         
@@ -80,7 +80,7 @@ class AppTableViewController: UITableViewController {
             fatalError("Unable to instantiate app2")
         }
         
-        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4, date: "30-Dec-2016") else {
+        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4.1, date: "30-Dec-2016") else {
             fatalError("Unable to instantiate app3")
         }
         
