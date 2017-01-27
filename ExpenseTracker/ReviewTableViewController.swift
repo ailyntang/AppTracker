@@ -40,15 +40,30 @@ class ReviewTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of ReviewTableViewCell")
         }
 
-        // Configure the cell...
-        
         let review = reviews[indexPath.row]
         
-        cell.dateLabel.text = review.reviewDate
+        
+        // Converting the date from the iTunes Search API into a string
+        let dateFormatter = DateFormatter()
+        let dateAsString = review.reviewDate
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
+        guard let newDate = dateFormatter.date(from: dateAsString) else {
+            fatalError("The review date from the iTunes Search API is not in the expected date format")
+        }
+        
+        dateFormatter.dateFormat = "EEEE"
+        let newDateString = dateFormatter.string(from: newDate)
+        
+        
+        // Linking the cell contents to the correct data
+        cell.dateLabel.text = newDateString
         cell.titleLabel.text = review.title
         cell.reviewLabel.text = review.review
         cell.ratingControl.rating = review.reviewRating
         
+
+        // Formatting the fonts of certain labels
         cell.dateLabel.font = UIFont.systemFont(ofSize: 12)
         cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
 
@@ -60,7 +75,7 @@ class ReviewTableViewController: UITableViewController {
     
     private func loadSampleReviews() {
         
-        guard let review1 = Review(appName: "Coles", reviewDate: "1 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
+        guard let review1 = Review(appName: "Coles", reviewDate: "01 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
             fatalError("Unable to instantiate review 1")
         }
         
