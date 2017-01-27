@@ -9,21 +9,14 @@
 import UIKit
 import os.log
 
-class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var ratingTextField: UITextField!
-    @IBOutlet weak var dateTextField: UITextField!
-    
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     
     var app: App?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +27,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         updateSaveButtonState()
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,6 +35,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
 
     // MARK: UITextFieldDelegate
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard
         textField.resignFirstResponder()
@@ -57,30 +52,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         saveButton.isEnabled = false
     }
     
-    
 
-    
-    // MARK: UIImagePickerControllerDelegate
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        // Dismiss the picker if the user cancels
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        // The info dictionary may contain multiple representations of the image
-        // You want to use the original
-        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-            fatalError("Expected a dictionary containing and image, but was provided the following: \(info)")
-        }
-        
-        // Set photoImageView to display the selected image
-        photoImageView.image = selectedImage
-        
-        // Dismiss the picker
-        dismiss(animated: true, completion: nil)
-    }
-    
     
     // MARK: Navigation
     
@@ -101,9 +73,9 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
         let name = nameTextField.text ?? ""
-        let photo = photoImageView.image
-        let rating = Double(ratingTextField.text!)!
-        let date = dateTextField.text ?? ""
+        let photo = UIImage(named: "defaultPhoto")
+        let rating = 1.5
+        let date = "01 Jan 2000"
         
         // Set the app to be passed to AppTableViewController after the unwind segue
         app = App(name: name, photo: photo, rating: rating, date: date)
@@ -111,26 +83,8 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UIImagePicker
      }
     
     
-    
-    // MARK: Actions
-    
-    @IBAction func selectImageFromPhotoLibrary(_ sender: UITapGestureRecognizer) {
-        // Hide the keyboard
-        nameTextField.resignFirstResponder()
-        
-        // UIImagePickerController is a view controller that lets a userpick media from their photo library
-        let imagePickerController = UIImagePickerController()
-        
-        // Only allow photos to be picked, not taken
-        imagePickerController.sourceType = .photoLibrary
-        
-        // Make sure ViewController is notified when the user picks an image
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-
-    
     // MARK: Private Methods
+    
     private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty
         let text = nameTextField.text ?? ""
