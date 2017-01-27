@@ -51,7 +51,7 @@ class AppTableViewController: UITableViewController {
         
         // In the future when reading from the iTunes search API, the dateFormat will be:
         // dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         
         guard let newDate = dateFormatter.date(from: dateAsString) else {
             fatalError("The app release date from the iTunes Search API is not in the expected date format")
@@ -88,15 +88,15 @@ class AppTableViewController: UITableViewController {
         let photo2 = UIImage(named: "citylink")
         let photo3 = UIImage(named: "transport")
         
-        guard let app1 = App(name: "Coles", photo: photo1, rating:3.5, date: "06 Mar-2016") else {
+        guard let app1 = App(name: "Coles", photo: photo1, rating:3.5, date: "06 Mar 2016") else {
             fatalError("Unable to instantiate app1")
         }
         
-        guard let app2 = App(name: "CityLink", photo: photo2, rating: 5, date: "05-May-2016") else {
+        guard let app2 = App(name: "CityLink", photo: photo2, rating: 5, date: "05 May 2016") else {
             fatalError("Unable to instantiate app2")
         }
         
-        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4.1, date: "30-Dec-2016") else {
+        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4.1, date: "30 Dec 2016") else {
             fatalError("Unable to instantiate app3")
         }
         
