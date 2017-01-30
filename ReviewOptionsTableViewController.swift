@@ -44,11 +44,7 @@ class ReviewOptionsTableViewController: UITableViewController {
         cell.optionLabel.text = option.optionType
         cell.settingButton.setTitle(option.defaultOption, for: .normal)
         
-        print("inside cellForRowAt")
-        
         return cell
-        
-        
     }
 
     
@@ -75,7 +71,6 @@ class ReviewOptionsTableViewController: UITableViewController {
         }
         
         options += [option1, option2, option3]
-        
     }
   
 

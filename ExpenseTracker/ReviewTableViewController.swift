@@ -72,9 +72,41 @@ class ReviewTableViewController: UITableViewController {
     
     
     // MARK: Private Methods
+
+    
+    // This "works", but it's just me playing around.
+//    private func readJSONObject(object: [String: AnyObject]) {
+//        guard let reviews = object["reviews"] as? [[String: AnyObject]] else {
+//            fatalError("Issue with readJSONObject")
+//        }
+//        
+//        for review in reviews {
+//            guard let appName = review["appName"] as? String,
+//                let review = review["review"] as? String else {
+//                    fatalError("Issue inside the for loop in readJSONObject")
+//            }
+//        }
+//    }
     
     private func loadSampleReviews() {
         
+        // This "works", but it's just me playing around with it
+//        let url = Bundle.main.url(forResource: "sampleReviews", withExtension: "json")
+//        let data = NSData(contentsOf: url!)
+//        
+//        do {
+//            let object = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments)
+//            if let dictionary = object as? [String: AnyObject] {
+//                print("inside the dictionary bit: \(dictionary)")
+//            }
+//        } catch {
+//            fatalError("Some issue with sampleReviews.json")
+//        }
+        
+        
+        
+        // All of this code works
+        // Trying to replace it with a JSON file now
         guard let review1 = Review(appName: "Coles", reviewDate: "01 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
             fatalError("Unable to instantiate review 1")
         }
