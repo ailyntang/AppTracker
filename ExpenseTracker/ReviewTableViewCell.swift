@@ -27,8 +27,8 @@ class ReviewTableViewCell: UITableViewCell {
         
         // Linking the cell contents to the correct data
         dateLabel.text = newDateString
-        titleLabel.text = review.title
-        reviewLabel.text = review.review
+        titleLabel.text = review.reviewTitle
+        reviewLabel.text = review.reviewInFull
         ratingControl.rating = review.reviewRating
         
         

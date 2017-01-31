@@ -15,19 +15,26 @@ class Review {
     var appName: String
     var reviewDate: Date
     var reviewRating: Double    // can't be Int as ReviewControl expects Double
-    var title: String
-    var review: String
-    
+    var reviewTitle: String?
+    var reviewInFull: String?
     
     
     // MARK: Initialization
     
-    init?(appName: String, reviewDate: String, reviewRating: Double, title: String, review: String) {
+    init?(appName: String, reviewDate: String, reviewRating: Double, reviewTitle: String?, reviewInFull: String?) {
     
-        // Initialization should fail if there is no name or the rating is negative
+        let unwrappedReviewTitle = reviewTitle ?? ""
+        let unwrappedReviewInFull = reviewInFull ?? ""
+        
+        
+        // Initialization should fail if the following occurs
         if appName.isEmpty || reviewRating < 0 || fmod(reviewRating, 1) != 0 {
             return nil
         }
+    
+        // What happens if there is no title or review left? Need to return ""
+        // (string ?? "").isEmpty ? "Default" : string!
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"
@@ -36,8 +43,8 @@ class Review {
         self.appName = appName
         self.reviewDate = dateFormatter.date(from: reviewDate)!
         self.reviewRating = reviewRating
-        self.title = title
-        self.review = review
+        self.reviewTitle = unwrappedReviewTitle
+        self.reviewInFull = unwrappedReviewInFull
     }
     
     
@@ -64,10 +71,10 @@ class Review {
             let appName = reviewDictionary["appName"] as? String
             let reviewDate = reviewDictionary["reviewDate"] as? String
             let reviewRating = reviewDictionary["reviewRating"] as? Double
-            let title = reviewDictionary["title"] as? String
-            let review = reviewDictionary["review"] as? String
+            let reviewTitle = reviewDictionary["title"] as? String?
+            let reviewInFull = reviewDictionary["review"] as? String?
             
-            let myReview = Review(appName: appName!, reviewDate: reviewDate!, reviewRating: reviewRating!, title: title!, review: review!)
+            let myReview = Review(appName: appName!, reviewDate: reviewDate!, reviewRating: reviewRating!, reviewTitle: reviewTitle!, reviewInFull: reviewInFull!)
             
             reviews.append(myReview!)
         }

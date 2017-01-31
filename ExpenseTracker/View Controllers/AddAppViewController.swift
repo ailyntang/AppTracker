@@ -72,13 +72,18 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
             return
         }
         
+        
+        // Surely I should replace this next section with "setup app" or something similar
+        // Right now when things change in "app.swift", I need to change it here too
+        
         let appName = nameTextField.text ?? ""
         let appIcon = UIImage(named: "defaultPhoto")
-        let currentVersionAppStoreRating = 1.5
+        let currentVersionRating = 1.5
         let latestReleaseDate = "01 Jan 2000"
+
         
         // Set the app to be passed to AppTableViewController after the unwind segue
-        app = App(appName: appName, appIcon: appIcon, currentVersionAppStoreRating: currentVersionAppStoreRating, latestReleaseDate: latestReleaseDate)
+        app = App(appName: appName, appIcon: appIcon!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
         
      }
     

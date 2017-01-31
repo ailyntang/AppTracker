@@ -30,7 +30,7 @@ class AppTableViewCell: UITableViewCell {
         
         nameLabel.text = app.appName
         photoImageView.image = app.appIcon
-        ratingControl.rating = app.currentVersionAppStoreRating
+        ratingControl.rating = app.currentVersionRating!
         dateLabel.text = newDateAsString
 
     }

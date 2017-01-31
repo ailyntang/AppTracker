@@ -103,7 +103,7 @@
 		6A94886C1E2850BF00385FF3 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				6ACA27781E404FA900E16AFB /* Modules */,
+				6ACA27781E404FA900E16AFB /* Models */,
 				6ACA27771E404DC700E16AFB /* View Controllers */,
 				6A94886D1E2850BF00385FF3 /* AppDelegate.swift */,
 				6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */,
@@ -140,7 +140,7 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		6ACA27781E404FA900E16AFB /* Modules */ = {
+		6ACA27781E404FA900E16AFB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6A6E37E01E3586FE0091105E /* App.swift */,
@@ -148,7 +148,7 @@
 				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
 				6A6E37DE1E31E4C00091105E /* RatingControl.swift */,
 			);
-			path = Modules;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
