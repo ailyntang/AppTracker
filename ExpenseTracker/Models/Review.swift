@@ -23,7 +23,7 @@ class Review {
     
     init?(appName: String, reviewDate: String, reviewRating: Double, reviewTitle: String?, reviewInFull: String?) {
     
-        let unwrappedReviewTitle = reviewTitle ?? ""
+        let unwrappedReviewTitle = reviewTitle ?? "No review"
         let unwrappedReviewInFull = reviewInFull ?? ""
         
         
@@ -32,9 +32,6 @@ class Review {
             return nil
         }
     
-        // What happens if there is no title or review left? Need to return ""
-        // (string ?? "").isEmpty ? "Default" : string!
-        
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM yyyy"

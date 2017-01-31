@@ -42,6 +42,16 @@ class App {
         self.latestReleaseDate = dateFormatter.date(from: latestReleaseDate)!
     }
     
+    func appFromJson(dict: NSDictionary) -> App {
+        let appName = dict["name"] as! String
+        let appIcon = dict["photo"] as! String
+        let currentVersionRating = dict["rating"] as! Double?
+        let latestReleaseDate = dict["date"] as! String
+        
+        let app = App(appName: appName, appIcon: UIImage(named: appIcon)!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
+        return app!
+        
+    }
     
     class func loadSampleApps() -> [App] {
         
@@ -56,6 +66,9 @@ class App {
         // replace the following with a function to set this up
         for anyApp in appList {
             let appDictionary = anyApp as! NSDictionary
+            
+//            let myApp = appFromJson(anyApp)
+
             let appName = appDictionary["name"] as! String
             let appIcon = appDictionary["photo"] as! String
             let currentVersionRating = appDictionary["rating"] as! Double?
