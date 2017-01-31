@@ -89,24 +89,56 @@ class ReviewTableViewController: UITableViewController {
 //    }
     
     private func loadSampleReviews() {
+
+        /*********************************************************
+        ********** Attempts to fetch data from JSON file *********
+        **********************************************************
+        */
         
-        // This "works", but it's just me playing around with it
-//        let url = Bundle.main.url(forResource: "sampleReviews", withExtension: "json")
-//        let data = NSData(contentsOf: url!)
-//        
-//        do {
-//            let object = try JSONSerialization.jsonObject(with: data! as Data, options: .allowFragments)
-//            if let dictionary = object as? [String: AnyObject] {
-//                print("inside the dictionary bit: \(dictionary)")
-//            }
-//        } catch {
-//            fatalError("Some issue with sampleReviews.json")
-//        }
+        // Fetch URL
+        let url = Bundle.main.url(forResource: "sampleReviews", withExtension: "json")!
+        
+        // Load data
+        let data = try! Data(contentsOf: url)
+        
+        // Deserialize JSON
+        let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as! NSDictionary
+
         
         
         
-        // All of this code works
-        // Trying to replace it with a JSON file now
+        
+        let reviewList = topLevelDictionary["reviews"] as! NSArray // reviews is NSArray
+        
+        var reviewArray: [Review] = []
+        
+        for anyReview in reviewList {
+            let reviewDictionary = anyReview as! NSDictionary
+            
+            let appName = reviewDictionary["appName"] as? String
+            let reviewDate = reviewDictionary["reviewDate"] as? String
+            let reviewRating = reviewDictionary["reviewRating"] as? Double
+            let title = reviewDictionary["title"] as? String
+            let review = reviewDictionary["review"] as? String
+            
+            let myReview = Review(appName: appName!, reviewDate: reviewDate!, reviewRating: reviewRating!, title: title!, review: review!)
+            
+            reviewArray.append(myReview!)
+            
+            print(myReview)
+        }
+        
+        print(reviewArray)
+        
+        
+      
+        
+        
+        /*********************************************************
+         ******************* Old code which works ****************
+         *********************************************************
+         */
+        
         guard let review1 = Review(appName: "Coles", reviewDate: "01 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
             fatalError("Unable to instantiate review 1")
         }
@@ -120,6 +152,7 @@ class ReviewTableViewController: UITableViewController {
         }
 
         reviews += [review1, review2, review3]
+        print(reviews)
         
     }
     

@@ -43,28 +43,8 @@ class AppTableViewController: UITableViewController {
         
         // Fetches the approporiate app for the data source layout
         let app = apps[indexPath.row]
+        cell.setupWithApp(app)
         
-        
-        // Takes a string and converts it to a date
-        let dateFormatter = DateFormatter()
-        let dateAsString = app.date
-        
-        // In the future when reading from the iTunes search API, the dateFormat will be:
-        // dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        
-        guard let newDate = dateFormatter.date(from: dateAsString) else {
-            fatalError("The app release date from the iTunes Search API is not in the expected date format")
-        }
-        
-        dateFormatter.dateFormat = "dd MMM yy"
-        let newDateAsString = dateFormatter.string(from: newDate)
-        
-        cell.nameLabel.text = app.name
-        cell.photoImageView.image = app.photo
-        cell.ratingControl.rating = app.rating
-        cell.dateLabel.text = newDateAsString
-
         return cell
     }
     

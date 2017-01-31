@@ -15,7 +15,7 @@ class App {
     var name: String
     var photo: UIImage?
     var rating: Double
-    var date: String
+    var date: Date
     
     
     // MARK: Initialization
@@ -27,11 +27,16 @@ class App {
             return nil
         }
         
+        let dateFormatter = DateFormatter()
+        // In the future when reading from the iTunes search API, the dateFormat will be:
+        // dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        
         // Initialize stored properties
         self.name = name
         self.photo = photo
         self.rating = rating
-        self.date = date
+        self.date = dateFormatter.date(from: date)!
     }
     
 }

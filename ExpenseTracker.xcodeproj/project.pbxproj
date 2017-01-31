@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6A19CC7E1E3B11F4008F08B1 /* sampleReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */; };
+		6A19CCD41E3EF050008F08B1 /* ReviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19CCD31E3EF050008F08B1 /* ReviewData.swift */; };
+		6A19CCD61E3EF16D008F08B1 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19CCD51E3EF16D008F08B1 /* JSONDecodable.swift */; };
 		6A35FC3C1E35CB4A008ED01F /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3B1E35CB4A008ED01F /* ReviewTableViewController.swift */; };
 		6A35FC3E1E35CB86008ED01F /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3D1E35CB86008ED01F /* ReviewTableViewCell.swift */; };
 		6A35FC401E35CE7C008ED01F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3F1E35CE7C008ED01F /* Review.swift */; };
@@ -21,6 +23,7 @@
 		6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488741E2850BF00385FF3 /* Assets.xcassets */; };
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
+		6ACA27721E400F9A00E16AFB /* sampleReviewsSimple.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */; };
 		6ADDDD2E1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */; };
 		6ADDDD301E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
@@ -38,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviews.json; sourceTree = "<group>"; };
+		6A19CCD31E3EF050008F08B1 /* ReviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewData.swift; sourceTree = "<group>"; };
+		6A19CCD51E3EF16D008F08B1 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
 		6A35FC3B1E35CB4A008ED01F /* ReviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		6A35FC3D1E35CB86008ED01F /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6A35FC3F1E35CE7C008ED01F /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -55,6 +60,7 @@
 		6A94887E1E2850C000385FF3 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviewsSimple.json; sourceTree = "<group>"; };
 		6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewOptionsTableViewController.swift; path = ../ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
 		6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
@@ -78,34 +84,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A19CCCE1E3EEAEF008F08B1 /* Storyboards */ = {
+		6A19CCD21E3EF037008F08B1 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				6A9488711E2850BF00385FF3 /* Main.storyboard */,
-				6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */,
+				6A19CCD31E3EF050008F08B1 /* ReviewData.swift */,
+				6A19CCD51E3EF16D008F08B1 /* JSONDecodable.swift */,
 			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		6A19CCCF1E3EEB30008F08B1 /* Root List of Apps */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Root List of Apps";
-			sourceTree = "<group>";
-		};
-		6A19CCD01E3EEB42008F08B1 /* Review Sort Options */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Review Sort Options";
-			sourceTree = "<group>";
-		};
-		6A19CCD11E3EEB4A008F08B1 /* Review List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Review List";
+			path = JSON;
 			sourceTree = "<group>";
 		};
 		6A9488611E2850BF00385FF3 = {
@@ -129,11 +114,10 @@
 		6A94886C1E2850BF00385FF3 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				6A19CCD11E3EEB4A008F08B1 /* Review List */,
-				6A19CCD01E3EEB42008F08B1 /* Review Sort Options */,
-				6A19CCCF1E3EEB30008F08B1 /* Root List of Apps */,
-				6A19CCCE1E3EEAEF008F08B1 /* Storyboards */,
+				6A19CCD21E3EF037008F08B1 /* JSON */,
 				6A94886D1E2850BF00385FF3 /* AppDelegate.swift */,
+				6A9488711E2850BF00385FF3 /* Main.storyboard */,
+				6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */,
 				6A6E37E21E35A6B70091105E /* AddAppViewController.swift */,
 				6A6E37DE1E31E4C00091105E /* RatingControl.swift */,
 				6A6E37E01E3586FE0091105E /* App.swift */,
@@ -148,6 +132,7 @@
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
 				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
+				6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -244,6 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ACA27721E400F9A00E16AFB /* sampleReviewsSimple.json in Resources */,
 				6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */,
 				6A19CC7E1E3B11F4008F08B1 /* sampleReviews.json in Resources */,
 				6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */,
@@ -267,12 +253,14 @@
 			files = (
 				6A6E37DD1E31E28D0091105E /* AppTableViewCell.swift in Sources */,
 				6A6E37DB1E31988E0091105E /* AppTableViewController.swift in Sources */,
+				6A19CCD41E3EF050008F08B1 /* ReviewData.swift in Sources */,
 				6A35FC3C1E35CB4A008ED01F /* ReviewTableViewController.swift in Sources */,
 				6A6E37E11E3586FE0091105E /* App.swift in Sources */,
 				6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */,
 				6ADDDD2E1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift in Sources */,
 				6A35FC401E35CE7C008ED01F /* Review.swift in Sources */,
 				6A6E37E31E35A6B70091105E /* AddAppViewController.swift in Sources */,
+				6A19CCD61E3EF16D008F08B1 /* JSONDecodable.swift in Sources */,
 				6ADDDD301E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift in Sources */,
 				6A6E37DF1E31E4C00091105E /* RatingControl.swift in Sources */,
 				6A35FC3E1E35CB86008ED01F /* ReviewTableViewCell.swift in Sources */,
@@ -305,7 +293,6 @@
 				6A9488721E2850BF00385FF3 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */ = {
@@ -314,7 +301,6 @@
 				6A9488771E2850BF00385FF3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

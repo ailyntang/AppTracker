@@ -27,5 +27,18 @@ class AppTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setupWithApp(_ app: App) {
+        // Takes a string and converts it to a date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yy"
+        let newDateAsString = dateFormatter.string(from: app.date)
+        
+        nameLabel.text = app.name
+        photoImageView.image = app.photo
+        ratingControl.rating = app.rating
+        dateLabel.text = newDateAsString
+
+    }
 
 }
