@@ -22,10 +22,6 @@ class AppTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
     func setupWithApp(_ app: App) {
         // Takes the date from the app and presents it in the desired format
         let dateFormatter = DateFormatter()

@@ -19,6 +19,11 @@ class App {
 
     
     // MARK: Initialization
+
+    // Ideally we'd have this function as "loadSampleApps" is doing too much
+//    func fromJson(_ dic: NSDictionary) -> App {
+//        
+//    }
     
     init?(name: String, photo: UIImage?, rating: Double, date: String) {
         
@@ -54,6 +59,15 @@ class App {
         let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
         let appList = topLevelDictionary["apps"] as! NSArray
         
+        // Playing around with photo from URL
+//        let imageURL = "http://is5.mzstatic.com/image/thumb/Purple71/v4/4b/ce/90/4bce9064-f2e6-a93e-8921-b4881b03a651/source/100x100bb.jpg"
+        
+//        if let filePath = Bundle.main.url(forResource: "imageName", ofType: "jpg"), let image = UIImage(contentsOfFile: filePath) {
+//            imageView.contentMode = .scaleAspectFit
+//            imageView.image = image
+//        }
+        
+        
         for anyApp in appList {
             let appDictionary = anyApp as! NSDictionary
             
@@ -63,6 +77,7 @@ class App {
             let date = appDictionary["date"] as! String
             
             let myApp = App(name: name, photo: UIImage(named: photo), rating: rating, date: date)
+            
             
             apps.append(myApp!)
         }
