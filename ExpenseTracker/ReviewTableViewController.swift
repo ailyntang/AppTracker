@@ -72,21 +72,6 @@ class ReviewTableViewController: UITableViewController {
     
     
     // MARK: Private Methods
-
-    
-    // This "works", but it's just me playing around.
-//    private func readJSONObject(object: [String: AnyObject]) {
-//        guard let reviews = object["reviews"] as? [[String: AnyObject]] else {
-//            fatalError("Issue with readJSONObject")
-//        }
-//        
-//        for review in reviews {
-//            guard let appName = review["appName"] as? String,
-//                let review = review["review"] as? String else {
-//                    fatalError("Issue inside the for loop in readJSONObject")
-//            }
-//        }
-//    }
     
     private func loadSampleReviews() {
 
@@ -104,14 +89,10 @@ class ReviewTableViewController: UITableViewController {
         // Deserialize JSON
         let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options:[]) as! NSDictionary
 
+        let reviewList = topLevelDictionary["reviews"] as! NSArray
         
         
-        
-        
-        let reviewList = topLevelDictionary["reviews"] as! NSArray // reviews is NSArray
-        
-        var reviewArray: [Review] = []
-        
+        // Convert the data into an array of Reviews
         for anyReview in reviewList {
             let reviewDictionary = anyReview as! NSDictionary
             
@@ -123,36 +104,9 @@ class ReviewTableViewController: UITableViewController {
             
             let myReview = Review(appName: appName!, reviewDate: reviewDate!, reviewRating: reviewRating!, title: title!, review: review!)
             
-            reviewArray.append(myReview!)
-            
-            print(myReview)
-        }
-        
-        print(reviewArray)
-        
-        
-      
-        
-        
-        /*********************************************************
-         ******************* Old code which works ****************
-         *********************************************************
-         */
-        
-        guard let review1 = Review(appName: "Coles", reviewDate: "01 Jan 2017", reviewRating: 5, title: "Awesome app!", review: "so amazing, would recommend to all my friends ") else {
-            fatalError("Unable to instantiate review 1")
-        }
-        
-        guard let review2 = Review(appName: "Coles", reviewDate: "13 Jan 2017", reviewRating: 1, title: "Crap", review: "where are the prices?") else {
-            fatalError("Unable to instantiate review 2")
-        }
-        
-        guard let review3 = Review(appName: "Coles", reviewDate: "22 Jan 2017", reviewRating: 4, title: "Great app", review: "Love the design, it's so much better than the old app.") else {
-            fatalError("Unable to instantiate review 2")
+            reviews.append(myReview!)
         }
 
-        reviews += [review1, review2, review3]
-        print(reviews)
         
     }
     

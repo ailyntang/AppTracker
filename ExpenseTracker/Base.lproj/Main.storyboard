@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEt-Lc-Dgh" id="lOE-uw-Yio">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="DJd-Ka-Vrc">
@@ -165,7 +165,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MGF-Ew-ydl" id="RTb-B0-6e1">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sKf-4x-rFV">
@@ -236,7 +236,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lzq-e1-UOO" id="nRy-17-grr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ddl-69-dlX" customClass="RatingControl" customModule="ExpenseTracker" customModuleProvider="target">
@@ -247,13 +247,13 @@
                                             </constraints>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Yu-BN-9Aw">
-                                            <rect key="frame" x="8" y="67.333333333333329" width="398" height="20.333333333333343"/>
+                                            <rect key="frame" x="8" y="58.333333333333329" width="398" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqI-i5-nfx">
-                                            <rect key="frame" x="8" y="39" width="92" height="20.333333333333336"/>
+                                            <rect key="frame" x="8" y="30.000000000000004" width="92" height="20.333333333333339"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -272,7 +272,7 @@
                                         <constraint firstItem="1NN-jW-23A" firstAttribute="trailing" secondItem="nRy-17-grr" secondAttribute="trailingMargin" id="JsO-bJ-dif"/>
                                         <constraint firstItem="4Yu-BN-9Aw" firstAttribute="top" secondItem="YqI-i5-nfx" secondAttribute="bottom" constant="8" id="Mfk-VC-Lq1"/>
                                         <constraint firstItem="1NN-jW-23A" firstAttribute="centerY" secondItem="ddl-69-dlX" secondAttribute="centerY" id="VfC-ll-L45"/>
-                                        <constraint firstItem="YqI-i5-nfx" firstAttribute="top" secondItem="ddl-69-dlX" secondAttribute="bottom" constant="17" id="eEX-DU-Abg"/>
+                                        <constraint firstItem="YqI-i5-nfx" firstAttribute="top" secondItem="ddl-69-dlX" secondAttribute="bottom" constant="8" id="eEX-DU-Abg"/>
                                         <constraint firstItem="4Yu-BN-9Aw" firstAttribute="leading" secondItem="nRy-17-grr" secondAttribute="leadingMargin" id="mBv-ND-m5L"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="4Yu-BN-9Aw" secondAttribute="trailing" id="oiC-Ak-VSh"/>
                                     </constraints>

@@ -23,7 +23,6 @@
 		6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488741E2850BF00385FF3 /* Assets.xcassets */; };
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
-		6ACA27721E400F9A00E16AFB /* sampleReviewsSimple.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */; };
 		6ADDDD2E1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */; };
 		6ADDDD301E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
@@ -60,7 +59,6 @@
 		6A94887E1E2850C000385FF3 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviewsSimple.json; sourceTree = "<group>"; };
 		6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewOptionsTableViewController.swift; path = ../ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
 		6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
 				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
-				6ACA27711E400F9A00E16AFB /* sampleReviewsSimple.json */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACA27721E400F9A00E16AFB /* sampleReviewsSimple.json in Resources */,
 				6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */,
 				6A19CC7E1E3B11F4008F08B1 /* sampleReviews.json in Resources */,
 				6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */,

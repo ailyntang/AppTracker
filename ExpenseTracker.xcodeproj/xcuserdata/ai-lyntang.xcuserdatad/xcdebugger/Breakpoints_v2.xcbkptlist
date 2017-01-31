@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ExpenseTracker/ReviewTableViewController.swift"
-            timestampString = "507517196.31909"
+            timestampString = "507518056.7334"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "loadSampleReviews()"
             landmarkType = "7">
          </BreakpointContent>
