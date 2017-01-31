@@ -72,13 +72,13 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
             return
         }
         
-        let name = nameTextField.text ?? ""
-        let photo = UIImage(named: "defaultPhoto")
-        let rating = 1.5
-        let date = "01 Jan 2000"
+        let appName = nameTextField.text ?? ""
+        let appIcon = UIImage(named: "defaultPhoto")
+        let currentVersionAppStoreRating = 1.5
+        let latestReleaseDate = "01 Jan 2000"
         
         // Set the app to be passed to AppTableViewController after the unwind segue
-        app = App(name: name, photo: photo, rating: rating, date: date)
+        app = App(appName: appName, appIcon: appIcon, currentVersionAppStoreRating: currentVersionAppStoreRating, latestReleaseDate: latestReleaseDate)
         
      }
     

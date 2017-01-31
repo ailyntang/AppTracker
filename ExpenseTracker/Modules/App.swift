@@ -12,10 +12,10 @@ class App {
     
     // MARK: Properties
     
-    var name: String
-    var photo: UIImage?
-    var rating: Double
-    var date: Date  // the initialisation takes a date string and returns a date
+    var appName: String
+    var appIcon: UIImage?                         // this should not be optional. All apps on the app stores have a photo
+    var currentVersionAppStoreRating: Double    // this should be Double? as it could be nil
+    var latestReleaseDate: Date                 // the initialisation takes a date string and returns a date
 
     
     // MARK: Initialization
@@ -25,10 +25,10 @@ class App {
 //        
 //    }
     
-    init?(name: String, photo: UIImage?, rating: Double, date: String) {
+    init?(appName: String, appIcon: UIImage?, currentVersionAppStoreRating: Double, latestReleaseDate: String) {
         
         // Initialization should fail if there is no name or if the rating is negative
-        if name.isEmpty || rating < 0 {
+        if appName.isEmpty || currentVersionAppStoreRating < 0 {
             return nil
         }
         
@@ -42,10 +42,10 @@ class App {
         
         
         // Initialize stored properties
-        self.name = name
-        self.photo = photo
-        self.rating = rating
-        self.date = dateFormatter.date(from: date)!
+        self.appName = appName
+        self.appIcon = appIcon
+        self.currentVersionAppStoreRating = currentVersionAppStoreRating
+        self.latestReleaseDate = dateFormatter.date(from: latestReleaseDate)!
     }
     
     
@@ -71,12 +71,12 @@ class App {
         for anyApp in appList {
             let appDictionary = anyApp as! NSDictionary
             
-            let name = appDictionary["name"] as! String
-            let photo = appDictionary["photo"] as! String
-            let rating = appDictionary["rating"] as! Double
-            let date = appDictionary["date"] as! String
+            let appName = appDictionary["name"] as! String
+            let appIcon = appDictionary["photo"] as! String
+            let currentVersionAppStoreRating = appDictionary["rating"] as! Double
+            let latestReleaseDate = appDictionary["date"] as! String
             
-            let myApp = App(name: name, photo: UIImage(named: photo), rating: rating, date: date)
+            let myApp = App(appName: appName, appIcon: UIImage(named: appIcon), currentVersionAppStoreRating: currentVersionAppStoreRating, latestReleaseDate: latestReleaseDate)
             
             
             apps.append(myApp!)

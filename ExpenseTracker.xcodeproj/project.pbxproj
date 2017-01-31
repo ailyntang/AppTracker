@@ -59,7 +59,7 @@
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ACA27731E402EE800E16AFB /* sampleApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleApps.json; sourceTree = "<group>"; };
 		6ACA27751E403C0C00E16AFB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
-		6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewOptionsTableViewController.swift; path = ../ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
+		6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
 		6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,20 +103,14 @@
 		6A94886C1E2850BF00385FF3 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6ACA27781E404FA900E16AFB /* Modules */,
+				6ACA27771E404DC700E16AFB /* View Controllers */,
 				6A94886D1E2850BF00385FF3 /* AppDelegate.swift */,
-				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */,
-				6A6E37E21E35A6B70091105E /* AddAppViewController.swift */,
-				6A6E37DE1E31E4C00091105E /* RatingControl.swift */,
-				6A6E37E01E3586FE0091105E /* App.swift */,
+				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A6E37DC1E31E28D0091105E /* AppTableViewCell.swift */,
-				6A6E37DA1E31988E0091105E /* AppTableViewController.swift */,
-				6A35FC3F1E35CE7C008ED01F /* Review.swift */,
-				6A35FC3B1E35CB4A008ED01F /* ReviewTableViewController.swift */,
 				6A35FC3D1E35CB86008ED01F /* ReviewTableViewCell.swift */,
-				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
 				6ADDDD2F1E3AE3A000B5A79F /* ReviewOptionsTableViewCell.swift */,
-				6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
 				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
@@ -133,6 +127,28 @@
 				6A9488841E2850C000385FF3 /* Info.plist */,
 			);
 			path = ExpenseTrackerTests;
+			sourceTree = "<group>";
+		};
+		6ACA27771E404DC700E16AFB /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6ADDDD2D1E3AD7DD00B5A79F /* ReviewOptionsTableViewController.swift */,
+				6A6E37DA1E31988E0091105E /* AppTableViewController.swift */,
+				6A6E37E21E35A6B70091105E /* AddAppViewController.swift */,
+				6A35FC3B1E35CB4A008ED01F /* ReviewTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6ACA27781E404FA900E16AFB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				6A6E37E01E3586FE0091105E /* App.swift */,
+				6A35FC3F1E35CE7C008ED01F /* Review.swift */,
+				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
+				6A6E37DE1E31E4C00091105E /* RatingControl.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
