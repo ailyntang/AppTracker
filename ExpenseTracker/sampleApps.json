@@ -1,0 +1,25 @@
+{
+    "apps": [
+             {
+             "name": "Coles",
+             "photo": "coles",
+             "rating": 2.5,
+             "date": "2016-06-08T07:00:00Z"
+             },
+             {
+             "name": "Opal",
+             "photo": "transport",
+             "rating": 4,
+             "date": "2016-12-18T07:00:00Z"
+             },
+             {
+             "name": "CityLink",
+             "photo": "citylink",
+             "rating": 3,
+             "date": "2017-02-27T07:00:00Z"
+             }
+             ],
+    "dataTitle": "Sample Apps",
+    "swiftVersion": 3
+}
+

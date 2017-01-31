@@ -29,7 +29,7 @@ class AppTableViewCell: UITableViewCell {
     func setupWithApp(_ app: App) {
         // Takes the date from the app and presents it in the desired format
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.dateFormat = "dd MMM yy"
         let newDateAsString = dateFormatter.string(from: app.date)
         
         nameLabel.text = app.name

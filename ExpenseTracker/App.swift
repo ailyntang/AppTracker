@@ -15,8 +15,8 @@ class App {
     var name: String
     var photo: UIImage?
     var rating: Double
-    var date: Date
-    
+    var date: Date  // the initialisation takes a date string and returns a date
+
     
     // MARK: Initialization
     
@@ -30,9 +30,10 @@ class App {
         
         // Takes the date as a string and converts it to a date
         // In the future when reading from the iTunes search API, the dateFormat will be:
-        // dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+      
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//        dateFormatter.dateFormat = "dd MMM yyyy"
         
         
         // Initialize stored properties
@@ -40,6 +41,33 @@ class App {
         self.photo = photo
         self.rating = rating
         self.date = dateFormatter.date(from: date)!
+    }
+    
+    
+    class func loadSampleApps() -> [App] {
+        
+        var apps: [App] = []
+        
+        let url = Bundle.main.url(forResource: "sampleApps", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        
+        let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
+        let appList = topLevelDictionary["apps"] as! NSArray
+        
+        for anyApp in appList {
+            let appDictionary = anyApp as! NSDictionary
+            
+            let name = appDictionary["name"] as! String
+            let photo = appDictionary["photo"] as! String
+            let rating = appDictionary["rating"] as! Double
+            let date = appDictionary["date"] as! String
+            
+            let myApp = App(name: name, photo: UIImage(named: photo), rating: rating, date: date)
+            
+            apps.append(myApp!)
+        }
+    
+        return apps
     }
     
 }

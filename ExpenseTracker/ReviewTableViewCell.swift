@@ -28,7 +28,7 @@ class ReviewTableViewCell: UITableViewCell {
 
     func setupReviewCell(_ review: Review) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
+        dateFormatter.dateFormat = "dd MMM yy"
         let newDateString = dateFormatter.string(from: review.reviewDate)
         
         

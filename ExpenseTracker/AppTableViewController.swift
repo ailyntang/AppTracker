@@ -17,7 +17,7 @@ class AppTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Load the sample data
-        loadSampleApps()
+        apps = App.loadSampleApps()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,10 +44,8 @@ class AppTableViewController: UITableViewController {
         // Fetches the approporiate app for the data source layout
         let app = apps[indexPath.row]
         cell.setupWithApp(app)
-        
         return cell
     }
-    
 
     
     // MARK: Actions
@@ -59,29 +57,7 @@ class AppTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }
-    
-    
-    
-    // MARK: Private Methods
-    private func loadSampleApps() {
-        let photo1 = UIImage(named: "coles")
-        let photo2 = UIImage(named: "citylink")
-        let photo3 = UIImage(named: "transport")
-        
-        guard let app1 = App(name: "Coles", photo: photo1, rating:3.5, date: "06 Mar 2016") else {
-            fatalError("Unable to instantiate app1")
-        }
-        
-        guard let app2 = App(name: "CityLink", photo: photo2, rating: 5, date: "05 May 2016") else {
-            fatalError("Unable to instantiate app2")
-        }
-        
-        guard let app3 = App(name: "Opal Travel", photo: photo3, rating: 4.1, date: "30 Dec 2016") else {
-            fatalError("Unable to instantiate app3")
-        }
-        
-        apps += [app1, app2, app3]
-    }
+
     
 }
 
