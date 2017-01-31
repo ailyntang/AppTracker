@@ -41,33 +41,9 @@ class ReviewTableViewController: UITableViewController {
         }
 
         let review = reviews[indexPath.row]
-        
-        
-        // Converting the date from the iTunes Search API into a string
-        let dateFormatter = DateFormatter()
-        let dateAsString = review.reviewDate
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        
-        guard let newDate = dateFormatter.date(from: dateAsString) else {
-            fatalError("The review date from the iTunes Search API is not in the expected date format")
-        }
-        
-        dateFormatter.dateFormat = "EEEE"
-        let newDateString = dateFormatter.string(from: newDate)
-        
-        
-        // Linking the cell contents to the correct data
-        cell.dateLabel.text = newDateString
-        cell.titleLabel.text = review.title
-        cell.reviewLabel.text = review.review
-        cell.ratingControl.rating = review.reviewRating
-        
-
-        // Formatting the fonts of certain labels
-        cell.dateLabel.font = UIFont.systemFont(ofSize: 12)
-        cell.titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
-
+        cell.setupReviewCell(review)
         return cell
+        
     }
     
     
@@ -75,11 +51,6 @@ class ReviewTableViewController: UITableViewController {
     
     private func loadSampleReviews() {
 
-        /*********************************************************
-        ********** Attempts to fetch data from JSON file *********
-        **********************************************************
-        */
-        
         // Fetch URL
         let url = Bundle.main.url(forResource: "sampleReviews", withExtension: "json")!
         

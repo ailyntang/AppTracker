@@ -25,4 +25,22 @@ class ReviewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+
+    func setupReviewCell(_ review: Review) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        let newDateString = dateFormatter.string(from: review.reviewDate)
+        
+        
+        // Linking the cell contents to the correct data
+        dateLabel.text = newDateString
+        titleLabel.text = review.title
+        reviewLabel.text = review.review
+        ratingControl.rating = review.reviewRating
+        
+        
+        // Formatting the fonts of certain labels
+        dateLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+    }
 }

@@ -27,10 +27,13 @@ class App {
             return nil
         }
         
-        let dateFormatter = DateFormatter()
+        
+        // Takes the date as a string and converts it to a date
         // In the future when reading from the iTunes search API, the dateFormat will be:
         // dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
+        
         
         // Initialize stored properties
         self.name = name

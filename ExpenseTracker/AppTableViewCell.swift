@@ -24,14 +24,12 @@ class AppTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func setupWithApp(_ app: App) {
-        // Takes a string and converts it to a date
+        // Takes the date from the app and presents it in the desired format
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yy"
+        dateFormatter.dateFormat = "EEEE"
         let newDateAsString = dateFormatter.string(from: app.date)
         
         nameLabel.text = app.name
