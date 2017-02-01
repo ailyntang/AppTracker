@@ -5,8 +5,7 @@
 //  Created by Ai-Lyn Tang on 23/1/17.
 //  Copyright © 2017 Ai-Lyn Tang. All rights reserved.
 //
-
-import UIKit
+import Foundation
 
 class Review {
     

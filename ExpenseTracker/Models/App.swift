@@ -42,7 +42,7 @@ class App {
         self.latestReleaseDate = dateFormatter.date(from: latestReleaseDate)!
     }
     
-    func appFromJson(dict: NSDictionary) -> App {
+    class func appFromJson(dict: NSDictionary) -> App {
         let appName = dict["name"] as! String
         let appIcon = dict["photo"] as! String
         let currentVersionRating = dict["rating"] as! Double?
@@ -67,19 +67,37 @@ class App {
         for anyApp in appList {
             let appDictionary = anyApp as! NSDictionary
             
-//            let myApp = appFromJson(anyApp)
+            let myApp = appFromJson(dict: appDictionary)
 
-            let appName = appDictionary["name"] as! String
-            let appIcon = appDictionary["photo"] as! String
-            let currentVersionRating = appDictionary["rating"] as! Double?
-            let latestReleaseDate = appDictionary["date"] as! String
+//            let appName = appDictionary["name"] as! String
+//            let appIcon = appDictionary["photo"] as! String
+//            let currentVersionRating = appDictionary["rating"] as! Double?
+//            let latestReleaseDate = appDictionary["date"] as! String
+//            
+//            let myApp = App(appName: appName, appIcon: UIImage(named: appIcon)!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
             
-            let myApp = App(appName: appName, appIcon: UIImage(named: appIcon)!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
-            
-            apps.append(myApp!)
+            apps.append(myApp)
         }
     
         return apps
     }
+    
+    
+    
+//    
+//    class func load_image(urlString: String) {
+//        var imgURL: NSURL = NSURL(string: urlString)!
+//        let request: NSURLRequest = NSURLRequest(url: imgURL as URL)
+//        NSURLConnection.sendAsynchronousRequest(
+//            request as URLRequest, queue: OperationQueue.mainQueue,
+//            completionHandler: {(response: URLResponse!,data: NSData!,error: NSError!) -> Void in
+//                if error == nil {
+//                    self.image_element.image = UIImage(data: data)
+//                }
+//        })
+//        
+//        
+//    }
+    
     
 }
