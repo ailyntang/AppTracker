@@ -15,8 +15,6 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    @IBOutlet weak var testImage: UIImageView!
-    
     var app: App?
     
     override func viewDidLoad() {
@@ -27,8 +25,6 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         // Enable the Save button only if the text field has a valid App Name
         updateSaveButtonState()
-        
-        load_image(urlString: "http://is5.mzstatic.com/image/thumb/Purple71/v4/4b/ce/90/4bce9064-f2e6-a93e-8921-b4881b03a651/source/100x100bb.jpg")
         
     }
 
@@ -82,13 +78,13 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Right now when things change in "app.swift", I need to change it here too
         
         let appName = nameTextField.text ?? ""
-        let appIcon = UIImage(named: "defaultPhoto")
+        let appIconUrl = "http://is5.mzstatic.com/image/thumb/Purple71/v4/4b/ce/90/4bce9064-f2e6-a93e-8921-b4881b03a651/source/100x100bb.jpg"
         let currentVersionRating = 1.5
-        let latestReleaseDate = "01 Jan 2000"
+        let latestReleaseDate = "2016-06-08T07:00:00Z"
 
         
         // Set the app to be passed to AppTableViewController after the unwind segue
-        app = App(appName: appName, appIcon: appIcon!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
+        app = App(appName: appName, appIconUrl: appIconUrl, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
         
      }
     
@@ -100,22 +96,6 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         let text = nameTextField.text ?? ""
         saveButton.isEnabled = !text.isEmpty
     }
-    
-    private func load_image(urlString: String) {
-        
-        if let url = URL(string: urlString) {
-            
-                DispatchQueue.global(qos: .background).async {
-                    if let data = try? Data(contentsOf: url, options: NSData.ReadingOptions.uncached) {
-                        
-                        DispatchQueue.main.async {
-                            self.testImage.image = UIImage(data: data)
-                        }
-                    }
-                }
 
-        }
-    }
-    
-    
+
 }

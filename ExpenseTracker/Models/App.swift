@@ -6,23 +6,23 @@
 //  Copyright © 2017 Ai-Lyn Tang. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class App {
     
     // MARK: Properties
     
     var appName: String
-    var appIcon: UIImage                       // This should be a URL not an image
+    var appIconUrl: String                       // This should be a URL not an image
     var currentVersionRating: Double?
     var latestReleaseDate: Date                 // the initialisation takes a date string and returns a date
 
     
     // MARK: Initialization
     
-    init?(appName: String, appIcon: UIImage, currentVersionRating: Double?, latestReleaseDate: String) {
+    init?(appName: String, appIconUrl: String, currentVersionRating: Double?, latestReleaseDate: String) {
         
-        // Initialization should fail if there is no name or if the rating is negative
+        // Initialization should fail if for the following conditions
 //        if appName.isEmpty || currentVersionAppStoreRating < 0 {
 //            return nil
 //        }
@@ -37,21 +37,26 @@ class App {
         
         // Initialize stored properties
         self.appName = appName
-        self.appIcon = appIcon
+        self.appIconUrl = appIconUrl
         self.currentVersionRating = rating
         self.latestReleaseDate = dateFormatter.date(from: latestReleaseDate)!
     }
     
+    
+    
+    // MARK: Functions
+    
     class func appFromJson(dict: NSDictionary) -> App {
         let appName = dict["name"] as! String
-        let appIcon = dict["photo"] as! String
+        let appIconUrl = dict["photo"] as! String
         let currentVersionRating = dict["rating"] as! Double?
         let latestReleaseDate = dict["date"] as! String
         
-        let app = App(appName: appName, appIcon: UIImage(named: appIcon)!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
+        let app = App(appName: appName, appIconUrl: appIconUrl, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
         return app!
         
     }
+    
     
     class func loadSampleApps() -> [App] {
         
@@ -63,19 +68,9 @@ class App {
         let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
         let appList = topLevelDictionary["apps"] as! NSArray
         
-        // replace the following with a function to set this up
         for anyApp in appList {
             let appDictionary = anyApp as! NSDictionary
-            
             let myApp = appFromJson(dict: appDictionary)
-
-//            let appName = appDictionary["name"] as! String
-//            let appIcon = appDictionary["photo"] as! String
-//            let currentVersionRating = appDictionary["rating"] as! Double?
-//            let latestReleaseDate = appDictionary["date"] as! String
-//            
-//            let myApp = App(appName: appName, appIcon: UIImage(named: appIcon)!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
-            
             apps.append(myApp)
         }
     
@@ -83,21 +78,7 @@ class App {
     }
     
     
-    
-//    
-//    class func load_image(urlString: String) {
-//        var imgURL: NSURL = NSURL(string: urlString)!
-//        let request: NSURLRequest = NSURLRequest(url: imgURL as URL)
-//        NSURLConnection.sendAsynchronousRequest(
-//            request as URLRequest, queue: OperationQueue.mainQueue,
-//            completionHandler: {(response: URLResponse!,data: NSData!,error: NSError!) -> Void in
-//                if error == nil {
-//                    self.image_element.image = UIImage(data: data)
-//                }
-//        })
-//        
-//        
-//    }
+
     
     
 }

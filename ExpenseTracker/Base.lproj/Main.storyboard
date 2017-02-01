@@ -122,10 +122,6 @@
                                     <constraint firstItem="uS1-K8-zNf" firstAttribute="leading" secondItem="eSB-am-Zey" secondAttribute="leading" id="ghu-DG-UnZ"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efK-DT-OrM">
-                                <rect key="frame" x="94" y="143" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -149,7 +145,6 @@
                     <connections>
                         <outlet property="nameTextField" destination="Ocj-08-vM0" id="R4K-ii-4Hs"/>
                         <outlet property="saveButton" destination="ubM-4K-lPI" id="9jE-rm-FDl"/>
-                        <outlet property="testImage" destination="efK-DT-OrM" id="7OU-ib-uWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcv-kt-azx" userLabel="First Responder" sceneMemberID="firstResponder"/>

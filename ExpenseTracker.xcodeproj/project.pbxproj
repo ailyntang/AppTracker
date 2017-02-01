@@ -146,8 +146,8 @@
 				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
-				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
 				6ACA27731E402EE800E16AFB /* sampleApps.json */,
+				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
 				6ACA27751E403C0C00E16AFB /* itunesColes.json */,
 			);
 			path = ExpenseTracker;

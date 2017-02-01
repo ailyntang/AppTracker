@@ -6,7 +6,7 @@
 //  Copyright © 2017 Ai-Lyn Tang. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ReviewOption {
     
