@@ -26,6 +26,7 @@
 		6ACA27741E402EE800E16AFB /* sampleApps.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27731E402EE800E16AFB /* sampleApps.json */; };
 		6ACA27761E403C0C00E16AFB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27751E403C0C00E16AFB /* itunesColes.json */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
+		6AE1018B1E42FD64006A30CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1018A1E42FD64006A30CB /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		6ACA27731E402EE800E16AFB /* sampleApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleApps.json; sourceTree = "<group>"; };
 		6ACA27751E403C0C00E16AFB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
+		6AE1018A1E42FD64006A30CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ExpenseTracker/SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		6A9488611E2850BF00385FF3 = {
 			isa = PBXGroup;
 			children = (
+				6AE1018A1E42FD64006A30CB /* SwiftyJSON.swift */,
 				6A94886C1E2850BF00385FF3 /* ExpenseTracker */,
 				6A9488811E2850C000385FF3 /* ExpenseTrackerTests */,
 				6A94886B1E2850BF00385FF3 /* Products */,
@@ -300,6 +303,7 @@
 				6A6E37E31E35A6B70091105E /* AddAppViewController.swift in Sources */,
 				6A8353C51E416D20004EEE2E /* ReviewOptionsTableViewController.swift in Sources */,
 				6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */,
+				6AE1018B1E42FD64006A30CB /* SwiftyJSON.swift in Sources */,
 				6A94886E1E2850BF00385FF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
