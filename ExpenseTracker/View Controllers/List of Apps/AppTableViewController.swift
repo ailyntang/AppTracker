@@ -17,7 +17,14 @@ class AppTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Load the sample data
-        apps = App.loadApp(appId: "529479190")
+        let clashOfClansId = "529479190"
+        let colesId = "529118855"
+        let citylinkId = "1091477735"
+        
+        apps.append(App.loadApp(appId: clashOfClansId))
+        apps.append(App.loadApp(appId: colesId))
+        apps.append(App.loadApp(appId: citylinkId))
+        
     }
 
     override func didReceiveMemoryWarning() {

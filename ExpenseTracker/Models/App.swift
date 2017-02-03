@@ -46,25 +46,10 @@ class App {
     
     // MARK: Functions
 
-    class func appsFromJson(json: JSON) -> [App]{
-        var apps: [App] = []
+    class func appFromJson(json: JSON) -> App{
         
-
-        // from sampleApps.json
-//        if let appList = json["apps"].array {
-//            for app in appList {
-//                let appName = app["name"].string
-//                let appIconUrl = app["photo"].string
-//                let currentVersionRating = app["rating"].double
-//                let latestReleaseDate = app["date"].string
-//                
-//                let newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)
-//                apps.append(newApp!)
-//            }
-//        }
+        var newApp: App?
         
-        
-        // from actual itunes url - works fine
         // This url doesn't have current Version Rating. Neither does the review url.
         if let appList = json["results"].array {
             for app in appList {
@@ -73,19 +58,27 @@ class App {
                 let currentVersionRating = 3.0
                 let latestReleaseDate = app["currentVersionReleaseDate"].string
                 
-                let newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)
-                
-                apps.append(newApp!)
+                newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)!
             }
         }
         
-        return apps
+        return newApp!
+        
+/*
+        // Try to remove for loop above, because there is only ever one element in this array
+        // I tried, but this returns nil
+        let testAppName = json[1]["results"][2]["trackCensoredName"].string
+        print(testAppName)
+        
+        return app
+*/
+        
     }
     
     
 
     
-    class func loadApp(appId: String) -> [App] {
+    class func loadApp(appId: String) -> App {
 
         let baseUrlString = "https://itunes.apple.com/lookup?id="
         // from iTunes RSS feed
@@ -95,7 +88,14 @@ class App {
         let data2 = try! Data(contentsOf: url2!)
         let json2 = JSON(data: data2)
     
-        return appsFromJson(json: json2)
+        return appFromJson(json: json2)
+        
+        
+        
+        
+        
+        
+        
         
         
         // Trying to use another thread. 
@@ -126,37 +126,7 @@ class App {
 }
 
 
-        // MARK: Functions without SwiftyJSON
-        
-//    class func appFromJson(dict: NSDictionary) -> App {
-//        let appName = dict["name"] as! String
-//        let appIconUrl = dict["photo"] as! String
-//        let currentVersionRating = dict["rating"] as! Double?
-//        let latestReleaseDate = dict["date"] as! String
-//
-//        let app = App(appName: appName, appIconUrl: appIconUrl, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
-//        return app!
-//        
-//    }
-//        class func loadSampleApps() -> [App] {
-        
-//        // Original JSON parsing without SwiftyJSON, all works fine
-//        var apps: [App] = []
-//        
-//        let url = Bundle.main.url(forResource: "sampleApps", withExtension: "json")!
-//        let data = try! Data(contentsOf: url)
-//        
-//        let topLevelDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! NSDictionary
-//        let appList = topLevelDictionary["apps"] as! NSArray
-//        
-//        for anyApp in appList {
-//            let appDictionary = anyApp as! NSDictionary
-//            let myApp = appFromJson(dict: appDictionary)
-//            apps.append(myApp)
-//        }
-//    
-//        return apps
-    
+
     
     
 
