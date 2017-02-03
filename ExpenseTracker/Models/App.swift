@@ -49,35 +49,83 @@ class App {
     class func appsFromJson(json: JSON) -> [App]{
         var apps: [App] = []
         
-        if let appList = json["apps"].array {
+
+        // from sampleApps.json
+//        if let appList = json["apps"].array {
+//            for app in appList {
+//                let appName = app["name"].string
+//                let appIconUrl = app["photo"].string
+//                let currentVersionRating = app["rating"].double
+//                let latestReleaseDate = app["date"].string
+//                
+//                let newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)
+//                apps.append(newApp!)
+//            }
+//        }
+        
+        
+        // from actual itunes url - works fine
+        // This url doesn't have current Version Rating. Neither does the review url.
+        if let appList = json["results"].array {
             for app in appList {
-                let appName = app["name"].string
-                let appIconUrl = app["photo"].string
-                let currentVersionRating = app["rating"].double
-                let latestReleaseDate = app["date"].string
+                let appName = app["trackCensoredName"].string
+                let appIconUrl = app["artworkUrl60"].string
+                let currentVersionRating = 3.0
+                let latestReleaseDate = app["currentVersionReleaseDate"].string
                 
                 let newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)
+                
                 apps.append(newApp!)
             }
         }
         
         return apps
     }
+    
+    
 
     
-    class func loadSampleApps() -> [App] {
+    class func loadApp(appId: String) -> [App] {
 
-        let url = Bundle.main.url(forResource: "sampleApps", withExtension: "json")
-        let data = try! Data(contentsOf: url!)
-        let json = JSON(data: data)
+        let baseUrlString = "https://itunes.apple.com/lookup?id="
+        // from iTunes RSS feed
+        let urlString = baseUrlString + appId
+        let url2 = URL(string: urlString)
+    
+        let data2 = try! Data(contentsOf: url2!)
+        let json2 = JSON(data: data2)
+    
+        return appsFromJson(json: json2)
         
-        return appsFromJson(json: json)
         
+        // Trying to use another thread. 
+        // It compiles, but the background thread doesn't pass the apps info back to the return value in time.
+//        var apps: [App] = []
+//        
+//        let urlString = "https://itunes.apple.com/lookup?id=529118855"
+//        
+//        if let url2 = URL(string: urlString) {
+//            print("inside if statement for url is a url")
+//            DispatchQueue.global(qos: .background).async{
+//                print("insde dispatch queue")
+//                let data = try! Data(contentsOf: url2, options: NSData.ReadingOptions.uncached)
+//                let json = JSON(data: data)
+//                apps = appsFromJson(json: json)
+//                print(apps)
+//            }
+//        }
+//        
+//        print("before returning apps")
+//        print(apps)
+//        return apps
+    
+    
     }
+    
+    
 }
 
-        
-   
+
         // MARK: Functions without SwiftyJSON
         
 //    class func appFromJson(dict: NSDictionary) -> App {

@@ -17,7 +17,7 @@ class AppTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Load the sample data
-        apps = App.loadSampleApps()
+        apps = App.loadApp(appId: "529479190")
     }
 
     override func didReceiveMemoryWarning() {

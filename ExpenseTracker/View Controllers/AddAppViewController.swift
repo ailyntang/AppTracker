@@ -74,6 +74,9 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
         
         
+        
+        
+        
         // Surely I should replace this next section with "setup app" or something similar
         // Right now when things change in "app.swift", I need to change it here too
         
