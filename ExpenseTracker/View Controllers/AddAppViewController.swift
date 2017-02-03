@@ -24,7 +24,8 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         nameTextField.delegate = self
         
         // Enable the Save button only if the text field has a valid App Name
-        updateSaveButtonState()
+        // The number keypad doesn't have a "go" button to get out of this state
+//        updateSaveButtonState()
         
     }
 
@@ -44,13 +45,13 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+//        updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Disable the Save button while editing
-        saveButton.isEnabled = false
+//        saveButton.isEnabled = false
     }
     
 
@@ -73,32 +74,21 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
             return
         }
         
+        let appId = nameTextField.text ?? ""
         
+        let newApp = App.loadApp(appId: appId) ?? nil
+        app = newApp
         
-        
-        
-        // Surely I should replace this next section with "setup app" or something similar
-        // Right now when things change in "app.swift", I need to change it here too
-        
-        let appName = nameTextField.text ?? ""
-        let appIconUrl = "http://is5.mzstatic.com/image/thumb/Purple71/v4/4b/ce/90/4bce9064-f2e6-a93e-8921-b4881b03a651/source/100x100bb.jpg"
-        let currentVersionRating = 1.5
-        let latestReleaseDate = "2016-06-08T07:00:00Z"
-
-        
-        // Set the app to be passed to AppTableViewController after the unwind segue
-        app = App(appName: appName, appIconUrl: appIconUrl, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate)
-        
-     }
+    }
     
     
     // MARK: Private Methods
     
-    private func updateSaveButtonState() {
-        // Disable the Save button if the text field is empty
-        let text = nameTextField.text ?? ""
-        saveButton.isEnabled = !text.isEmpty
-    }
+//    private func updateSaveButtonState() {
+//        // Disable the Save button if the text field is empty
+//        let text = nameTextField.text ?? ""
+//        saveButton.isEnabled = !text.isEmpty
+//    }
 
 
 }

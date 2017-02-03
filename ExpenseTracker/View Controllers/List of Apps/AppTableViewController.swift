@@ -17,6 +17,9 @@ class AppTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Load the sample data
+//        NetworkManager.searchAppsWithName("clash of clans") { listOfAppsFound, error in
+//            print("results: " + listOfAppsFound)
+//        }
         let clashOfClansId = "529479190"
         let colesId = "529118855"
         let citylinkId = "1091477735"

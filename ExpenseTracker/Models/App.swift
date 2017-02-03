@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class App {
     
@@ -51,76 +52,66 @@ class App {
         var newApp: App?
         
         // This url doesn't have current Version Rating. Neither does the review url.
-        if let appList = json["results"].array {
-            for app in appList {
-                let appName = app["trackCensoredName"].string
-                let appIconUrl = app["artworkUrl60"].string
-                let currentVersionRating = 3.0
-                let latestReleaseDate = app["currentVersionReleaseDate"].string
-                
-                newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)!
-            }
+        if let app = json["results"].array?.first {
+            let appName = app["trackCensoredName"].string
+            let appIconUrl = app["artworkUrl60"].string
+            let currentVersionRating = 3.0
+            let latestReleaseDate = app["currentVersionReleaseDate"].string
+            
+            newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)!
+            return newApp!
+            
+        } else {
+            let dummyApp: App? = nil
+            return dummyApp!
         }
         
-        return newApp!
-        
-/*
-        // Try to remove for loop above, because there is only ever one element in this array
-        // I tried, but this returns nil
-        let testAppName = json[1]["results"][2]["trackCensoredName"].string
-        print(testAppName)
-        
-        return app
-*/
-        
     }
     
-    
-
-    
-    class func loadApp(appId: String) -> App {
-
-        let baseUrlString = "https://itunes.apple.com/lookup?id="
-        // from iTunes RSS feed
-        let urlString = baseUrlString + appId
-        let url2 = URL(string: urlString)
-    
-        let data2 = try! Data(contentsOf: url2!)
-        let json2 = JSON(data: data2)
-    
-        return appFromJson(json: json2)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // Trying to use another thread. 
-        // It compiles, but the background thread doesn't pass the apps info back to the return value in time.
-//        var apps: [App] = []
+//    
+//
+//    class func loadApp(appId: String) -> App {
+//        let baseUrlString = "https://itunes.apple.com/lookup?id="
+//        let urlString = baseUrlString + appId
 //        
-//        let urlString = "https://itunes.apple.com/lookup?id=529118855"
-//        
-//        if let url2 = URL(string: urlString) {
-//            print("inside if statement for url is a url")
-//            DispatchQueue.global(qos: .background).async{
-//                print("insde dispatch queue")
-//                let data = try! Data(contentsOf: url2, options: NSData.ReadingOptions.uncached)
+//        if let url = URL(string: urlString) {
+//            DispatchQueue.global(qos: .background).async {
+//                let data = try! Data(contentsOf: url)
 //                let json = JSON(data: data)
-//                apps = appsFromJson(json: json)
-//                print(apps)
+////                let newApp = appFromJson(json: json)
+//                DispatchQueue.main.async {
+//                    let app = self.appFromJson(json: json)
+//                }
+//                
+//    
 //            }
 //        }
+//        let app: App? = nil
+//        return app!
 //        
-//        print("before returning apps")
-//        print(apps)
-//        return apps
+//    }
     
     
+
+     // This works fine - trying to replace it with a closure and call to a separate thread
+    class func loadApp(appId: String) -> App {
+        
+        let baseUrlString = "https://itunes.apple.com/lookup?id="
+        let urlString = baseUrlString + appId
+        
+        // Works but we need to put this into a separate thread
+        if let url = URL(string: urlString) {
+            let data = try! Data(contentsOf: url)
+            let json = JSON(data: data)
+            
+            return appFromJson(json: json)
+        
+        } else {
+            let dummyApp: App? = nil
+            return dummyApp!
+        }
     }
+ 
     
     
 }
