@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A19CC7E1E3B11F4008F08B1 /* sampleReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */; };
 		6A35FC401E35CE7C008ED01F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3F1E35CE7C008ED01F /* Review.swift */; };
 		6A6E37E11E3586FE0091105E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E37E01E3586FE0091105E /* App.swift */; };
 		6A6E37E31E35A6B70091105E /* AddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E37E21E35A6B70091105E /* AddAppViewController.swift */; };
@@ -23,10 +22,14 @@
 		6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488741E2850BF00385FF3 /* Assets.xcassets */; };
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
-		6ACA27741E402EE800E16AFB /* sampleApps.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27731E402EE800E16AFB /* sampleApps.json */; };
-		6ACA27761E403C0C00E16AFB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6ACA27751E403C0C00E16AFB /* itunesColes.json */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
 		6AE1018B1E42FD64006A30CB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE1018A1E42FD64006A30CB /* SwiftyJSON.swift */; };
+		6AE101961E4409CD006A30CB /* deconstructItunesReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */; };
+		6AE101971E4409CD006A30CB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101921E4409CD006A30CB /* itunesColes.json */; };
+		6AE101981E4409CD006A30CB /* itunesReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101931E4409CD006A30CB /* itunesReviews.json */; };
+		6AE101991E4409CD006A30CB /* sampleApps.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101941E4409CD006A30CB /* sampleApps.json */; };
+		6AE1019A1E4409CD006A30CB /* sampleReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101951E4409CD006A30CB /* sampleReviews.json */; };
+		6AE1019C1E440A0E006A30CB /* sampleReviewOptions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE1019B1E440A0E006A30CB /* sampleReviewOptions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviews.json; sourceTree = "<group>"; };
 		6A35FC3F1E35CE7C008ED01F /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		6A6E37E01E3586FE0091105E /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6A6E37E21E35A6B70091105E /* AddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +62,14 @@
 		6A94887E1E2850C000385FF3 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ACA27731E402EE800E16AFB /* sampleApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleApps.json; sourceTree = "<group>"; };
-		6ACA27751E403C0C00E16AFB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
 		6AE1018A1E42FD64006A30CB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ExpenseTracker/SwiftyJSON.swift; sourceTree = "<group>"; };
+		6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deconstructItunesReviews.json; sourceTree = "<group>"; };
+		6AE101921E4409CD006A30CB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
+		6AE101931E4409CD006A30CB /* itunesReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesReviews.json; sourceTree = "<group>"; };
+		6AE101941E4409CD006A30CB /* sampleApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleApps.json; sourceTree = "<group>"; };
+		6AE101951E4409CD006A30CB /* sampleReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviews.json; sourceTree = "<group>"; };
+		6AE1019B1E440A0E006A30CB /* sampleReviewOptions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sampleReviewOptions.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		6A94886C1E2850BF00385FF3 /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
+				6AE101901E4409CD006A30CB /* Data */,
 				6A8353B41E416C31004EEE2E /* Views */,
 				6ACA27781E404FA900E16AFB /* Models */,
 				6ACA27771E404DC700E16AFB /* View Controllers */,
@@ -149,9 +156,6 @@
 				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
-				6ACA27731E402EE800E16AFB /* sampleApps.json */,
-				6A19CC7D1E3B11F4008F08B1 /* sampleReviews.json */,
-				6ACA27751E403C0C00E16AFB /* itunesColes.json */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -184,6 +188,19 @@
 				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6AE101901E4409CD006A30CB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */,
+				6AE101921E4409CD006A30CB /* itunesColes.json */,
+				6AE101931E4409CD006A30CB /* itunesReviews.json */,
+				6AE101941E4409CD006A30CB /* sampleApps.json */,
+				6AE101951E4409CD006A30CB /* sampleReviews.json */,
+				6AE1019B1E440A0E006A30CB /* sampleReviewOptions.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,12 +286,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6ACA27741E402EE800E16AFB /* sampleApps.json in Resources */,
+				6AE101961E4409CD006A30CB /* deconstructItunesReviews.json in Resources */,
 				6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */,
-				6ACA27761E403C0C00E16AFB /* itunesColes.json in Resources */,
-				6A19CC7E1E3B11F4008F08B1 /* sampleReviews.json in Resources */,
+				6AE101971E4409CD006A30CB /* itunesColes.json in Resources */,
+				6AE1019A1E4409CD006A30CB /* sampleReviews.json in Resources */,
+				6AE101981E4409CD006A30CB /* itunesReviews.json in Resources */,
 				6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */,
+				6AE101991E4409CD006A30CB /* sampleApps.json in Resources */,
 				6A9488731E2850BF00385FF3 /* Main.storyboard in Resources */,
+				6AE1019C1E440A0E006A30CB /* sampleReviewOptions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

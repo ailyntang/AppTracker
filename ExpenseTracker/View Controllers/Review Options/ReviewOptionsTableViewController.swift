@@ -16,7 +16,7 @@ class ReviewOptionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadReviewOptions()
+        options = ReviewOption.loadReviewOptions()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,24 +54,6 @@ class ReviewOptionsTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    // MARK: Private Methods
-    
-    private func loadReviewOptions(){
-        guard let option1 = ReviewOption(optionType: "Version", defaultOption: "Current") else {
-            fatalError("Unable to instantiate option1")
-        }
-        
-        guard let option2 = ReviewOption(optionType: "Sort by", defaultOption: "Newest to oldest") else {
-            fatalError("Unable to instantiate option2")
-        }
-        
-        guard let option3 = ReviewOption(optionType: "Platform", defaultOption: "iOS") else {
-            fatalError("Unable to instatntiate option3")
-        }
-        
-        options += [option1, option2, option3]
-    }
   
 
 }

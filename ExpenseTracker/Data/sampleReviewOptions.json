@@ -1,0 +1,18 @@
+{
+    "reviewOptions": [
+                      {
+                      "optionType": "Version",
+                      "defaultOption": "Current"
+                      },
+                      {
+                      "optionType": "Sort by",
+                      "defaultOption": "Newest to oldest"
+                      },
+                      {
+                      "optionType": "Platform",
+                      "defaultOption": "iOS"
+                      }
+    ],
+    "dataTitle": "Sample Review Options",
+    "swiftVersion": 3
+}
