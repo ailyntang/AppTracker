@@ -13,6 +13,10 @@ class AppTableViewController: UITableViewController {
     let cellIdentifier = "AppTableViewCell"
     var apps: [App] = []
     
+    func onAppLoaded(_ app: App) -> Void {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,10 +28,17 @@ class AppTableViewController: UITableViewController {
         let colesId = "529118855"
         let citylinkId = "1091477735"
         
-        apps.append(App.loadApp(appId: clashOfClansId))
-        apps.append(App.loadApp(appId: colesId))
-        apps.append(App.loadApp(appId: citylinkId))
+//        apps.append(App.loadApp(appId: clashOfClansId))
+//        apps.append(App.loadApp(appId: colesId))
+//        apps.append(App.loadApp(appId: citylinkId))
         
+        print("before loadAppAsync")
+        App.loadAppAsync(appId: clashOfClansId, completionHandler: { myApp in
+            print("We got an app")
+            self.apps.append(myApp!)
+            self.tableView.reloadData()
+        })
+        print("after loadAppAsync")
     }
 
     override func didReceiveMemoryWarning() {
