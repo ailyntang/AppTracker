@@ -24,11 +24,13 @@ class Setup {
         let citylinkId = "1091477735"
         
         SetupVariables.appIdArray = [clashOfClansId, colesId, citylinkId]
-    
         SetupVariables.defaults.set(SetupVariables.appIdArray, forKey: SetupVariables.appIdUserDefaultKey)
-        var test = SetupVariables.defaults.stringArray(forKey: SetupVariables.appIdUserDefaultKey)
-        print(test![0])
-
+        
+        
+        // object   prints array
+        // string prints nil
+        let test = SetupVariables.defaults.stringArray(forKey: SetupVariables.appIdUserDefaultKey)
+        print(test!.last!)
         
     }
 
@@ -36,8 +38,6 @@ class Setup {
     class func addAppToList(appId: String) {
         SetupVariables.appIdArray.append(appId)
         SetupVariables.defaults.set(SetupVariables.appIdArray, forKey: SetupVariables.appIdUserDefaultKey)
-//        print(SetupVariables.defaults.stringArray(forKey: SetupVariables.appIdUserDefaultKey))
-        
     }
     
     

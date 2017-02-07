@@ -58,22 +58,21 @@ class AppTableViewController: UITableViewController {
 
     
     // MARK: Actions
+    
+    // This function is called when the "save" button is pressed on "New App" scene
     @IBAction func unwindToAppList(sender: UIStoryboardSegue) {
         
-        print("unwind to App List is called")
+        let appIdArray = Setup.SetupVariables.defaults.stringArray(forKey: Setup.SetupVariables.appIdUserDefaultKey)
         
-        if let sourceViewController = sender.source as? AddAppViewController, let app = sourceViewController.app {
-            print("inside the if statement in unwind to app")
-            // Add a new app
-            let newIndexPath = IndexPath(row: apps.count, section: 0)
-            apps.append(app)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
-            tableView.reloadData()
-            print("unwind to App List: number of apps in the array: \(apps.count)")
+        if let newAppId = appIdArray!.last {
+            NetworkManager.loadAppAsync(appId: newAppId, completionHandler: { newApp in
+                self.apps.append(newApp!)
+                self.tableView.reloadData()
+            })
         }
     }
 
-    
+
 }
 
 
