@@ -13,40 +13,20 @@ class AppTableViewController: UITableViewController {
     let cellIdentifier = "AppTableViewCell"
     var apps: [App] = []
     
-    func onAppLoaded(_ app: App) -> Void {
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+ 
+        Setup.setupAppList()
         
-        // Load the sample data
-//        NetworkManager.searchAppsWithName("clash of clans") { listOfAppsFound, error in
-//            print("results: " + listOfAppsFound)
-//        }
-        let clashOfClansId = "529479190"
-        let colesId = "529118855"
-        let citylinkId = "1091477735"
-        
-//        apps.append(App.loadApp(appId: clashOfClansId))
-//        apps.append(App.loadApp(appId: colesId))
-//        apps.append(App.loadApp(appId: citylinkId))
-        
-        print("before loadAppAsync")
-        NetworkManager.loadAppAsync(appId: clashOfClansId, completionHandler: { myApp in
-            print("We got an app")
-            self.apps.append(myApp!)
-            self.tableView.reloadData()
-        })
-        print("after loadAppAsync")
-        
-        NetworkManager.loadAppAsync(appId: colesId, completionHandler: { myApp in
-            self.apps.append(myApp!)
-            self.tableView.reloadData()
-        })
-        
+        for appId in Setup.SetupVariables.appIdArray {
+            NetworkManager.loadAppAsync(appId: appId, completionHandler: { myApp in
+                self.apps.append(myApp!)
+                self.tableView.reloadData()
+            })
+        }
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

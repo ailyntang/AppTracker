@@ -23,6 +23,7 @@
 		6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488741E2850BF00385FF3 /* Assets.xcassets */; };
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
+		6ACF3A381E495AC200BB0C82 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A371E495AC200BB0C82 /* Setup.swift */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
 		6AE101961E4409CD006A30CB /* deconstructItunesReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */; };
 		6AE101971E4409CD006A30CB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101921E4409CD006A30CB /* itunesColes.json */; };
@@ -66,6 +67,7 @@
 		6A94887E1E2850C000385FF3 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACF3A371E495AC200BB0C82 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
 		6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deconstructItunesReviews.json; sourceTree = "<group>"; };
 		6AE101921E4409CD006A30CB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
+				6ACF3A371E495AC200BB0C82 /* Setup.swift */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 				6A8353C11E416D20004EEE2E /* AppTableViewController.swift in Sources */,
 				6AE1019F1E444DF4006A30CB /* NetworkManager.swift in Sources */,
 				6A6E37E11E3586FE0091105E /* App.swift in Sources */,
+				6ACF3A381E495AC200BB0C82 /* Setup.swift in Sources */,
 				6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */,
 				6A8353C21E416D20004EEE2E /* ReviewTableViewCell.swift in Sources */,
 				6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */,
