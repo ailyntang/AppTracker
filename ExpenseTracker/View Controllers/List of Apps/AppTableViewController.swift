@@ -33,12 +33,18 @@ class AppTableViewController: UITableViewController {
 //        apps.append(App.loadApp(appId: citylinkId))
         
         print("before loadAppAsync")
-        App.loadAppAsync(appId: clashOfClansId, completionHandler: { myApp in
+        NetworkManager.loadAppAsync(appId: clashOfClansId, completionHandler: { myApp in
             print("We got an app")
             self.apps.append(myApp!)
             self.tableView.reloadData()
         })
         print("after loadAppAsync")
+        
+        NetworkManager.loadAppAsync(appId: colesId, completionHandler: { myApp in
+            self.apps.append(myApp!)
+            self.tableView.reloadData()
+        })
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,11 +79,17 @@ class AppTableViewController: UITableViewController {
     
     // MARK: Actions
     @IBAction func unwindToAppList(sender: UIStoryboardSegue) {
+        
+        print("unwind to App List is called")
+        
         if let sourceViewController = sender.source as? AddAppViewController, let app = sourceViewController.app {
+            print("inside the if statement in unwind to app")
             // Add a new app
             let newIndexPath = IndexPath(row: apps.count, section: 0)
             apps.append(app)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
+            tableView.reloadData()
+            print("unwind to App List: number of apps in the array: \(apps.count)")
         }
     }
 

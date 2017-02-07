@@ -68,72 +68,7 @@ class App {
         
     }
     
-    
 
-//    class func loadApp(appId: String) -> App {
-//        let baseUrlString = "https://itunes.apple.com/lookup?id="
-//        let urlString = baseUrlString + appId
-//        
-//        if let url = URL(string: urlString) {
-//            DispatchQueue.global(qos: .background).async {
-//                let data = try! Data(contentsOf: url)
-//                let json = JSON(data: data)
-////                let newApp = appFromJson(json: json)
-//                DispatchQueue.main.async {
-//                    let app = self.appFromJson(json: json)
-//                }
-//                
-//    
-//            }
-//        }
-//        let app: App? = nil
-//        return app!
-//        
-//    }
-    
-    class func loadAppAsync(appId: String, completionHandler: @escaping (App?) -> (Void)) {
-        
-        let baseUrlString = "https://itunes.apple.com/lookup?id="
-        let urlString = baseUrlString + appId
-        
-        DispatchQueue.global(qos: .background).async {
-            // Works but we need to put this into a separate thread
-            if let url = URL(string: urlString) {
-                let data = try! Data(contentsOf: url)
-                let json = JSON(data: data)
-                
-                let app = appFromJson(json: json)
-                
-                DispatchQueue.main.async {
-                    completionHandler(app)
-                }
-            } else {
-                
-                DispatchQueue.main.async {
-                    completionHandler(nil)
-                }
-            }
-        }
-    }
-
-     // This works fine - trying to replace it with a closure and call to a separate thread
-    class func loadApp(appId: String) -> App {
-        
-        let baseUrlString = "https://itunes.apple.com/lookup?id="
-        let urlString = baseUrlString + appId
-        
-        // Works but we need to put this into a separate thread
-        if let url = URL(string: urlString) {
-            let data = try! Data(contentsOf: url)
-            let json = JSON(data: data)
-            
-            return appFromJson(json: json)
-        
-        } else {
-            let dummyApp: App? = nil
-            return dummyApp!
-        }
-    }
  
     
     

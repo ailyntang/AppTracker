@@ -23,10 +23,6 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Handle the text field's user input through delegate callbacks
         nameTextField.delegate = self
         
-        // Enable the Save button only if the text field has a valid App Name
-        // The number keypad doesn't have a "go" button to get out of this state
-//        updateSaveButtonState()
-        
     }
 
     
@@ -76,19 +72,19 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         let appId = nameTextField.text ?? ""
         
-        let newApp = App.loadApp(appId: appId) ?? nil
-        app = newApp
         
+        // The segue should do this information. It should just pass the appId back to NSUserDefaults
+        NetworkManager.loadAppAsync(appId: appId, completionHandler: { addedApp in
+            self.app = addedApp
+            print("Inside Add App prepare statment: \(self.app!.appName)")
+            
+        })
+        
+        // Can't get app to have a value outside of the NetworkManager
+        // The next line shows app is nil
+        // print("Inside Add App prepare statment: \(app!.appName)")
     }
     
-    
-    // MARK: Private Methods
-    
-//    private func updateSaveButtonState() {
-//        // Disable the Save button if the text field is empty
-//        let text = nameTextField.text ?? ""
-//        saveButton.isEnabled = !text.isEmpty
-//    }
 
 
 }
