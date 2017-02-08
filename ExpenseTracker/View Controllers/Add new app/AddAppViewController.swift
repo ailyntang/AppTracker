@@ -14,8 +14,10 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var searchAppNameTextField: UITextField!
     
     var app: App?
+    var appManager: AppManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +74,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
         
         let appId = nameTextField.text
-        Setup.addAppToList(appId: appId!)
+        appManager?.addAppToList(appId: appId!)
 
     }
     
@@ -86,5 +88,13 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         saveButton.isEnabled = !text.isEmpty
     }
 
+    @IBAction func searchButtonPressed(_ sender: UIButton) {
+        
+        // Send app name to the serach URL
+        NetworkManager.searchForApps(searchTerm: searchAppNameTextField.text!)
+        
+        // Display search results in the table view
+        
+    }
 
 }

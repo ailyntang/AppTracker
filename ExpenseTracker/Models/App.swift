@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-class App {
+struct App {
     
     // MARK: Properties
     
@@ -47,7 +47,7 @@ class App {
     
     // MARK: Functions
 
-    class func appFromJson(json: JSON) -> App{
+    static func appFromJson(json: JSON) -> App{
         
         var newApp: App?
         

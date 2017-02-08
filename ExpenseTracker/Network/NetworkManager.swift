@@ -29,4 +29,24 @@ class NetworkManager {
         }        
     }
     
+    class func searchForApps(searchTerm: String) {
+        let formattedSearchTerm = searchTerm.replacingOccurrences(of: " ", with: "+")
+        let urlString = "https://itunes.apple.com/search?term=" + formattedSearchTerm + "&country=au&entity=software&limit=3"
+        print("search URL" + urlString)
+        
+        
+        Alamofire.request(urlString).responseData { dataResponse in
+            if let data = dataResponse.result.value {
+                let json = JSON(data: data)
+                print("Search json")
+                print(json)
+            }
+        }
+        
+        
+    }
+    
+    
+    
+    
 }

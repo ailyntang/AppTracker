@@ -10,7 +10,6 @@
 		590C998546CAFB961EFE5B32 /* Pods_ExpenseTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4579E6ACF2FC8662B73CDF1 /* Pods_ExpenseTrackerTests.framework */; };
 		6A35FC401E35CE7C008ED01F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3F1E35CE7C008ED01F /* Review.swift */; };
 		6A6E37E11E3586FE0091105E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E37E01E3586FE0091105E /* App.swift */; };
-		6A6E37E31E35A6B70091105E /* AddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E37E21E35A6B70091105E /* AddAppViewController.swift */; };
 		6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8353B51E416C31004EEE2E /* RatingControl.swift */; };
 		6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8353B81E416D20004EEE2E /* AppTableViewCell.swift */; };
 		6A8353C11E416D20004EEE2E /* AppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8353B91E416D20004EEE2E /* AppTableViewController.swift */; };
@@ -23,7 +22,9 @@
 		6A9488751E2850BF00385FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488741E2850BF00385FF3 /* Assets.xcassets */; };
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
-		6ACF3A381E495AC200BB0C82 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A371E495AC200BB0C82 /* Setup.swift */; };
+		6ACF3A381E495AC200BB0C82 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A371E495AC200BB0C82 /* AppManager.swift */; };
+		6ACF3A3B1E4AB49900BB0C82 /* AddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */; };
+		6ACF3A3D1E4AB4C800BB0C82 /* AddAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
 		6AE101961E4409CD006A30CB /* deconstructItunesReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */; };
 		6AE101971E4409CD006A30CB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101921E4409CD006A30CB /* itunesColes.json */; };
@@ -50,7 +51,6 @@
 		46199523EAF5E77CF095CB4E /* Pods_ExpenseTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpenseTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A35FC3F1E35CE7C008ED01F /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		6A6E37E01E3586FE0091105E /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		6A6E37E21E35A6B70091105E /* AddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppViewController.swift; sourceTree = "<group>"; };
 		6A8353B51E416C31004EEE2E /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		6A8353B81E416D20004EEE2E /* AppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		6A8353B91E416D20004EEE2E /* AppTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewController.swift; sourceTree = "<group>"; };
@@ -67,7 +67,9 @@
 		6A94887E1E2850C000385FF3 /* ExpenseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpenseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6ACF3A371E495AC200BB0C82 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		6ACF3A371E495AC200BB0C82 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppViewController.swift; sourceTree = "<group>"; };
+		6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppTableViewCell.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
 		6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deconstructItunesReviews.json; sourceTree = "<group>"; };
 		6AE101921E4409CD006A30CB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
-				6ACF3A371E495AC200BB0C82 /* Setup.swift */,
+				6ACF3A371E495AC200BB0C82 /* AppManager.swift */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";
@@ -207,10 +209,10 @@
 		6ACA27771E404DC700E16AFB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6ACF3A391E4AB49900BB0C82 /* Add new app */,
 				6A8353B71E416D20004EEE2E /* List of Apps */,
 				6A8353BA1E416D20004EEE2E /* List of Reviews */,
 				6A8353BD1E416D20004EEE2E /* Review Options */,
-				6A6E37E21E35A6B70091105E /* AddAppViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -223,6 +225,15 @@
 				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6ACF3A391E4AB49900BB0C82 /* Add new app */ = {
+			isa = PBXGroup;
+			children = (
+				6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */,
+				6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */,
+			);
+			path = "Add new app";
 			sourceTree = "<group>";
 		};
 		6AE101901E4409CD006A30CB /* Data */ = {
@@ -456,15 +467,16 @@
 			files = (
 				6A8353C41E416D20004EEE2E /* ReviewOptionsTableViewCell.swift in Sources */,
 				6A8353C31E416D20004EEE2E /* ReviewTableViewController.swift in Sources */,
+				6ACF3A3B1E4AB49900BB0C82 /* AddAppViewController.swift in Sources */,
 				6A8353C11E416D20004EEE2E /* AppTableViewController.swift in Sources */,
 				6AE1019F1E444DF4006A30CB /* NetworkManager.swift in Sources */,
 				6A6E37E11E3586FE0091105E /* App.swift in Sources */,
-				6ACF3A381E495AC200BB0C82 /* Setup.swift in Sources */,
+				6ACF3A381E495AC200BB0C82 /* AppManager.swift in Sources */,
 				6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */,
 				6A8353C21E416D20004EEE2E /* ReviewTableViewCell.swift in Sources */,
 				6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */,
 				6A35FC401E35CE7C008ED01F /* Review.swift in Sources */,
-				6A6E37E31E35A6B70091105E /* AddAppViewController.swift in Sources */,
+				6ACF3A3D1E4AB4C800BB0C82 /* AddAppTableViewCell.swift in Sources */,
 				6A8353C51E416D20004EEE2E /* ReviewOptionsTableViewController.swift in Sources */,
 				6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */,
 				6A94886E1E2850BF00385FF3 /* AppDelegate.swift in Sources */,

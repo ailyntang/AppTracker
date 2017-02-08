@@ -13,17 +13,25 @@ class AppTableViewController: UITableViewController {
     let cellIdentifier = "AppTableViewCell"
     var apps: [App] = []
     
+    var appManager: AppManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
- 
-        Setup.setupAppList()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        for appId in Setup.SetupVariables.appIdArray {
+        self.apps.removeAll()
+        for appId in appManager.getAppIds() {
             NetworkManager.loadAppAsync(appId: appId, completionHandler: { myApp in
                 self.apps.append(myApp!)
                 self.tableView.reloadData()
             })
         }
+        
+        //        NetworkManager.searchForApps(searchTerm: "opal travel")
     }
 
     
@@ -62,16 +70,26 @@ class AppTableViewController: UITableViewController {
     // This function is called when the "save" button is pressed on "New App" scene
     @IBAction func unwindToAppList(sender: UIStoryboardSegue) {
         
-        let appIdArray = Setup.SetupVariables.defaults.stringArray(forKey: Setup.SetupVariables.appIdUserDefaultKey)
-        
-        if let newAppId = appIdArray!.last {
-            NetworkManager.loadAppAsync(appId: newAppId, completionHandler: { newApp in
-                self.apps.append(newApp!)
-                self.tableView.reloadData()
-            })
-        }
+//        let appIdArray = Setup.SetupVariables.defaults.stringArray(forKey: Setup.SetupVariables.appIdUserDefaultKey)
+//        
+//        if let newAppId = appIdArray!.last {
+//            NetworkManager.loadAppAsync(appId: newAppId, completionHandler: { newApp in
+//                self.apps.append(newApp!)
+//                self.tableView.reloadData()
+//            })
+//        }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        let navVC = segue.destination as? UINavigationController
+        let addAppVC = navVC?.viewControllers.first as? AddAppViewController
+        addAppVC?.appManager = self.appManager
+        
+    }
 
 }
 
