@@ -15,17 +15,22 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var searchAppNameTextField: UITextField!
+    @IBOutlet weak var appSearchResults: UITableView!
     
     var app: App?
     var appManager: AppManager?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Handle the text field's user input through delegate callbacks
         nameTextField.delegate = self
         
         updateSaveButtonState()
+                
+        
     }
 
     
@@ -96,5 +101,6 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         // Display search results in the table view
         
     }
-
+    
+    
 }
