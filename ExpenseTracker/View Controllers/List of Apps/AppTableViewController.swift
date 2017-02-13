@@ -30,8 +30,6 @@ class AppTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
-        
-        //        NetworkManager.searchForApps(searchTerm: "opal travel")
     }
 
     

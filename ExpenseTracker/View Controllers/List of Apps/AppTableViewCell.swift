@@ -25,11 +25,11 @@ class AppTableViewCell: UITableViewCell {
         // Takes the date from the app and presents it in the desired format
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yy"
-        let newDateAsString = dateFormatter.string(from: app.latestReleaseDate)
+        let newDateAsString = dateFormatter.string(from: app.currentVersionReleaseDate)
         
-        nameLabel.text = app.appName
-        photoImageView.load_image(urlString: app.appIconUrl)
-        ratingControl.rating = app.currentVersionRating!
+        nameLabel.text = app.trackName
+        photoImageView.load_image(urlString: app.artworkUrl60)
+        ratingControl.rating = app.averageUserRatingForCurrentVersion!
         dateLabel.text = newDateAsString
         
     }

@@ -13,15 +13,15 @@ struct App {
     
     // MARK: Properties
     
-    var appName: String
-    var appIconUrl: String
-    var currentVersionRating: Double?
-    var latestReleaseDate: Date                 // the initialisation takes a date string and returns a date
+    var trackName: String
+    var artworkUrl60: String
+    var averageUserRatingForCurrentVersion: Double?
+    var currentVersionReleaseDate: Date                 // the initialisation takes a date string and returns a date
     
     
     // MARK: Initialization
     
-    init?(appName: String, appIconUrl: String, currentVersionRating: Double?, latestReleaseDate: String) {
+    init?(trackName: String, artworkUrl60: String, averageUserRatingForCurrentVersion: Double?, currentVersionReleaseDate: String) {
         
         // Initialization should fail if for the following conditions
 //        if appName.isEmpty || currentVersionAppStoreRating < 0 {
@@ -29,7 +29,7 @@ struct App {
 //        }
 //
         
-        let rating = currentVersionRating ?? 0.0
+        let rating = averageUserRatingForCurrentVersion ?? 0.0
         
         // Takes the date as a string and converts it to a date
         let dateFormatter = DateFormatter()
@@ -37,10 +37,10 @@ struct App {
 
         
         // Initialize stored properties
-        self.appName = appName
-        self.appIconUrl = appIconUrl
-        self.currentVersionRating = rating
-        self.latestReleaseDate = dateFormatter.date(from: latestReleaseDate)!
+        self.trackName = trackName
+        self.artworkUrl60 = artworkUrl60
+        self.averageUserRatingForCurrentVersion = rating
+        self.currentVersionReleaseDate = dateFormatter.date(from: currentVersionReleaseDate)!
     }
     
     
@@ -53,12 +53,12 @@ struct App {
         
         // This url doesn't have current Version Rating. Neither does the review url.
         if let app = json["results"].array?.first {
-            let appName = app["trackCensoredName"].string
-            let appIconUrl = app["artworkUrl60"].string
-            let currentVersionRating = 3.0
-            let latestReleaseDate = app["currentVersionReleaseDate"].string
+            let trackName = app["trackCensoredName"].string
+            let artworkUrl60 = app["artworkUrl60"].string
+            let averageUserRatingForCurrentVersion = 3.0
+            let currentVersionReleaseDate = app["currentVersionReleaseDate"].string
             
-            newApp = App(appName: appName!, appIconUrl: appIconUrl!, currentVersionRating: currentVersionRating, latestReleaseDate: latestReleaseDate!)!
+            newApp = App(trackName: trackName!, artworkUrl60: artworkUrl60!, averageUserRatingForCurrentVersion: averageUserRatingForCurrentVersion, currentVersionReleaseDate: currentVersionReleaseDate!)!
             return newApp!
             
         } else {

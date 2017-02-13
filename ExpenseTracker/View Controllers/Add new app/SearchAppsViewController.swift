@@ -96,6 +96,7 @@ extension SearchAppsViewController: UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController)
     {
         searchArray.removeAll(keepingCapacity: false)
+        print("inside updateSearchResults: search bar was tapped")
         
         let range = searchController.searchBar.text!.characters.startIndex ..< searchController.searchBar.text!.characters.endIndex
         var searchString = String()
@@ -105,6 +106,8 @@ extension SearchAppsViewController: UISearchResultsUpdating
             searchString.append("*")
         })
         
+        print(searchString)
+        
         let searchPredicate = NSPredicate(format: "SELF LIKE[cd] %@", searchString)
         let array = (Countries.list as NSArray).filtered(using: searchPredicate)
         searchArray = array as! [String]
@@ -113,7 +116,7 @@ extension SearchAppsViewController: UISearchResultsUpdating
     }
 }
 
-    
+
     
 
 

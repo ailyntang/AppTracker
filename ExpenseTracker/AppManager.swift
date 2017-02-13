@@ -32,8 +32,8 @@ class AppManager {
         
         // object   prints array
         // string prints nil
-        let test = defaults.stringArray(forKey: appIdUserDefaultKey)
-        print(test!.last!)
+//        let test = defaults.stringArray(forKey: appIdUserDefaultKey)
+//        print(test!.last!)
         
     }
 

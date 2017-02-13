@@ -38,8 +38,13 @@ class NetworkManager {
         Alamofire.request(urlString).responseData { dataResponse in
             if let data = dataResponse.result.value {
                 let json = JSON(data: data)
-                print("Search json")
-                print(json)
+                let arrayApps = AppFromSearchApi.appFromSearchApiJson(json: json)
+                print(arrayApps)
+                
+                
+                
+//                print("Search json")
+//                print(json)
             }
         }
         

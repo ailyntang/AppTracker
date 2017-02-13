@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" title="List of apps" id="h1p-Ep-LvK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="riA-oU-eQM">
                             <connections>
-                                <segue destination="GTA-da-erp" kind="show" id="WdR-PK-kLo"/>
+                                <segue destination="8J2-wg-g5d" kind="presentation" id="oUD-sO-Ytk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

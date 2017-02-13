@@ -21,8 +21,8 @@ class AddAppTableViewCell: UITableViewCell {
     }
 
     func returnSearchResults(_ app: App) {
-        nameLabel.text = app.appName
-        photoImageView.load_image(urlString: app.appIconUrl)
+        nameLabel.text = app.trackName
+        photoImageView.load_image(urlString: app.artworkUrl60)
 //        descriptionLabel = 
         // appManager.myNumber = 5
     }
