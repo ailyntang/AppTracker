@@ -28,30 +28,21 @@ class NetworkManager {
             }
         }        
     }
-    
-    class func searchForApps(searchTerm: String) {
+
+    // With completion handler. Passing arrayApps to VC
+    class func searchForApps(searchTerm: String, completionHandler: @escaping ([AppFromSearchApi]) -> (Void)) {
         let formattedSearchTerm = searchTerm.replacingOccurrences(of: " ", with: "+")
-        let urlString = "https://itunes.apple.com/search?term=" + formattedSearchTerm + "&country=au&entity=software&limit=3"
-        print("search URL" + urlString)
-        
+        let urlString = "https://itunes.apple.com/search?term=" + formattedSearchTerm + "&country=au&entity=software&limit=5"
         
         Alamofire.request(urlString).responseData { dataResponse in
             if let data = dataResponse.result.value {
                 let json = JSON(data: data)
-                let arrayApps = AppFromSearchApi.appFromSearchApiJson(json: json)
-                print(arrayApps)
+                let appArrayFromSearchApi = AppFromSearchApi.appFromSearchApiJson(json: json)
                 
-                
-                
-//                print("Search json")
-//                print(json)
+                completionHandler(appArrayFromSearchApi)
             }
         }
-        
-        
     }
-    
-    
-    
+
     
 }

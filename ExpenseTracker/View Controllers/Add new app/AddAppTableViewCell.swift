@@ -20,12 +20,24 @@ class AddAppTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func returnSearchResults(_ app: App) {
+    
+    func setupWithSearchResults(_ app: AppFromSearchApi) {
         nameLabel.text = app.trackName
         photoImageView.load_image(urlString: app.artworkUrl60)
-//        descriptionLabel = 
-        // appManager.myNumber = 5
+        descriptionLabel.text = app.description
     }
+    
+    
+    // Don't think this is used
+//    func returnSearchResults(_ app: App) {
+//        nameLabel.text = app.trackName
+//        photoImageView.load_image(urlString: app.artworkUrl60)
+//        print("returnSearchResults is called")
+//        descriptionLabel =
+        // appManager.myNumber = 5
+//    }
+    
+    
     
 
 }

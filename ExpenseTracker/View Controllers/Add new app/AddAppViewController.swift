@@ -9,27 +9,27 @@
 import UIKit
 import os.log
 
-class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
+class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var searchAppNameTextField: UITextField!
-    @IBOutlet weak var appSearchResults: UITableView!
+    @IBOutlet weak var appSearchResultsTable: UITableView!
     
-    var app: App?
+    var app: AppFromSearchApi?
+    var appArrayFromSearchResults: [AppFromSearchApi] = []
     var appManager: AppManager?
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Handle the text field's user input through delegate callbacks
         nameTextField.delegate = self
         
         updateSaveButtonState()
-                
         
     }
 
@@ -58,6 +58,27 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         saveButton.isEnabled = false
     }
     
+    
+    // MARK: Table View Data Source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return appArrayFromSearchResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = appSearchResultsTable.dequeueReusableCell(withIdentifier: "idCell") as? AddAppTableViewCell else {
+            fatalError("There's an error with the array of apps from the search query")
+        }
+        
+        let app = appArrayFromSearchResults[indexPath.row]
+        cell.setupWithSearchResults(app)
+        return cell
+    }
+    
+    
+    // MARK: Table View Delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     
     // MARK: Navigation
@@ -95,12 +116,10 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         
-        // Send app name to the serach URL
-        NetworkManager.searchForApps(searchTerm: searchAppNameTextField.text!)
-        
-        // Display search results in the table view
-        
+        // Send app name to the serach URL and reload table view to display search results
+        NetworkManager.searchForApps(searchTerm: searchAppNameTextField.text!, completionHandler: { appArray in
+            self.appArrayFromSearchResults = appArray
+            self.appSearchResultsTable.reloadData()
+        })
     }
-    
-    
 }
