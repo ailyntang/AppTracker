@@ -12,7 +12,7 @@ import os.log
 class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Properties
-    @IBOutlet weak var nameTextField: UITextField!
+//    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var searchAppNameTextField: UITextField!
     @IBOutlet weak var appSearchResultsTable: UITableView!
@@ -27,9 +27,9 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         super.viewDidLoad()
 
         // Handle the text field's user input through delegate callbacks
-        nameTextField.delegate = self
+//        nameTextField.delegate = self
         
-        updateSaveButtonState()
+//        updateSaveButtonState()
         
     }
 
@@ -49,7 +49,7 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        updateSaveButtonState()
+//        updateSaveButtonState()
         navigationItem.title = textField.text
     }
     
@@ -87,32 +87,32 @@ class AddAppViewController: UIViewController, UITextFieldDelegate, UINavigationC
         dismiss(animated: true, completion: nil)
     }
     
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//         // Get the new view controller using segue.destinationViewController.
+//         // Pass the selected object to the new view controller.
+//        super.prepare(for: segue, sender: sender)
+//        
+//        // Configure the destination view controller only when the save button is pressed
+//        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+//            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+//            return
+//        }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destinationViewController.
-         // Pass the selected object to the new view controller.
-        super.prepare(for: segue, sender: sender)
-        
-        // Configure the destination view controller only when the save button is pressed
-        guard let button = sender as? UIBarButtonItem, button === saveButton else {
-            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
-            return
-        }
-        
-        let appId = nameTextField.text
-        appManager?.addAppToList(appId: appId!)
+//        let appId = nameTextField.text
+//        appManager?.addAppToList(appId: appId!)
 
-    }
+//    }
     
     
     
     // MARK: Private Methods
     
-    private func updateSaveButtonState() {
+//    private func updateSaveButtonState() {
         // Disable the Save button if the text field is empty
-        let text = nameTextField.text ?? ""
-        saveButton.isEnabled = !text.isEmpty
-    }
+//        let text = nameTextField.text ?? ""
+//        saveButton.isEnabled = !text.isEmpty
+//    }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         

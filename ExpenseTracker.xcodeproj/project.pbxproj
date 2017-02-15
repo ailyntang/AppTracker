@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		590C998546CAFB961EFE5B32 /* Pods_ExpenseTrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4579E6ACF2FC8662B73CDF1 /* Pods_ExpenseTrackerTests.framework */; };
 		6A35FC401E35CE7C008ED01F /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35FC3F1E35CE7C008ED01F /* Review.swift */; };
+		6A40848B1E52BFAD00811A61 /* AlternateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084861E52BFAD00811A61 /* AlternateTableViewCell.swift */; };
+		6A40848C1E52BFAD00811A61 /* AlternateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084871E52BFAD00811A61 /* AlternateTableViewController.swift */; };
+		6A40848D1E52BFAD00811A61 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084881E52BFAD00811A61 /* Countries.swift */; };
+		6A40848E1E52BFAD00811A61 /* SearchCountriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084891E52BFAD00811A61 /* SearchCountriesTableViewCell.swift */; };
+		6A40848F1E52BFAD00811A61 /* SearchCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40848A1E52BFAD00811A61 /* SearchCountriesViewController.swift */; };
+		6A4084921E52C10A00811A61 /* SearchAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084911E52C10A00811A61 /* SearchAppsViewController.swift */; };
+		6A4084941E52C3D700811A61 /* SearchAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4084931E52C3D700811A61 /* SearchAppsTableViewCell.swift */; };
 		6A60561D1E51918400A59F0E /* AppFromSearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60561C1E51918400A59F0E /* AppFromSearchApi.swift */; };
-		6A6088EE1E4D8B480085F09F /* SearchAppsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6088ED1E4D8B480085F09F /* SearchAppsViewController.swift */; };
-		6A6088F01E5138230085F09F /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6088EF1E5138230085F09F /* Countries.swift */; };
-		6A6088F21E5139D60085F09F /* SearchAppsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6088F11E5139D60085F09F /* SearchAppsTableViewCell.swift */; };
-		6A6088F41E5141070085F09F /* AlternateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6088F31E5141060085F09F /* AlternateTableViewController.swift */; };
-		6A6088F61E5141480085F09F /* AlternateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6088F51E5141480085F09F /* AlternateTableViewCell.swift */; };
 		6A6E37E11E3586FE0091105E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6E37E01E3586FE0091105E /* App.swift */; };
 		6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8353B51E416C31004EEE2E /* RatingControl.swift */; };
 		6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8353B81E416D20004EEE2E /* AppTableViewCell.swift */; };
@@ -56,12 +58,14 @@
 		42E656C9F9E3CD13CE88E946 /* Pods-ExpenseTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpenseTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpenseTracker/Pods-ExpenseTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		46199523EAF5E77CF095CB4E /* Pods_ExpenseTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpenseTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A35FC3F1E35CE7C008ED01F /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		6A4084861E52BFAD00811A61 /* AlternateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateTableViewCell.swift; sourceTree = "<group>"; };
+		6A4084871E52BFAD00811A61 /* AlternateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateTableViewController.swift; sourceTree = "<group>"; };
+		6A4084881E52BFAD00811A61 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		6A4084891E52BFAD00811A61 /* SearchCountriesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCountriesTableViewCell.swift; sourceTree = "<group>"; };
+		6A40848A1E52BFAD00811A61 /* SearchCountriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCountriesViewController.swift; sourceTree = "<group>"; };
+		6A4084911E52C10A00811A61 /* SearchAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppsViewController.swift; sourceTree = "<group>"; };
+		6A4084931E52C3D700811A61 /* SearchAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppsTableViewCell.swift; sourceTree = "<group>"; };
 		6A60561C1E51918400A59F0E /* AppFromSearchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFromSearchApi.swift; sourceTree = "<group>"; };
-		6A6088ED1E4D8B480085F09F /* SearchAppsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppsViewController.swift; sourceTree = "<group>"; };
-		6A6088EF1E5138230085F09F /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
-		6A6088F11E5139D60085F09F /* SearchAppsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppsTableViewCell.swift; sourceTree = "<group>"; };
-		6A6088F31E5141060085F09F /* AlternateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateTableViewController.swift; sourceTree = "<group>"; };
-		6A6088F51E5141480085F09F /* AlternateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlternateTableViewCell.swift; sourceTree = "<group>"; };
 		6A6E37E01E3586FE0091105E /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		6A8353B51E416C31004EEE2E /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		6A8353B81E416D20004EEE2E /* AppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,6 +138,27 @@
 				D4579E6ACF2FC8662B73CDF1 /* Pods_ExpenseTrackerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A4084851E52BFAD00811A61 /* Search countries */ = {
+			isa = PBXGroup;
+			children = (
+				6A4084861E52BFAD00811A61 /* AlternateTableViewCell.swift */,
+				6A4084871E52BFAD00811A61 /* AlternateTableViewController.swift */,
+				6A4084881E52BFAD00811A61 /* Countries.swift */,
+				6A4084891E52BFAD00811A61 /* SearchCountriesTableViewCell.swift */,
+				6A40848A1E52BFAD00811A61 /* SearchCountriesViewController.swift */,
+			);
+			path = "Search countries";
+			sourceTree = "<group>";
+		};
+		6A4084901E52C01500811A61 /* Search for Apps */ = {
+			isa = PBXGroup;
+			children = (
+				6A4084931E52C3D700811A61 /* SearchAppsTableViewCell.swift */,
+				6A4084911E52C10A00811A61 /* SearchAppsViewController.swift */,
+			);
+			path = "Search for Apps";
 			sourceTree = "<group>";
 		};
 		6A8353B41E416C31004EEE2E /* Views */ = {
@@ -221,6 +246,8 @@
 		6ACA27771E404DC700E16AFB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6A4084901E52C01500811A61 /* Search for Apps */,
+				6A4084851E52BFAD00811A61 /* Search countries */,
 				6ACF3A391E4AB49900BB0C82 /* Add new app */,
 				6A8353B71E416D20004EEE2E /* List of Apps */,
 				6A8353BA1E416D20004EEE2E /* List of Reviews */,
@@ -245,11 +272,6 @@
 			children = (
 				6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */,
 				6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */,
-				6A6088F11E5139D60085F09F /* SearchAppsTableViewCell.swift */,
-				6A6088ED1E4D8B480085F09F /* SearchAppsViewController.swift */,
-				6A6088EF1E5138230085F09F /* Countries.swift */,
-				6A6088F51E5141480085F09F /* AlternateTableViewCell.swift */,
-				6A6088F31E5141060085F09F /* AlternateTableViewController.swift */,
 			);
 			path = "Add new app";
 			sourceTree = "<group>";
@@ -485,24 +507,26 @@
 			files = (
 				6A8353C41E416D20004EEE2E /* ReviewOptionsTableViewCell.swift in Sources */,
 				6A8353C31E416D20004EEE2E /* ReviewTableViewController.swift in Sources */,
-				6A6088EE1E4D8B480085F09F /* SearchAppsViewController.swift in Sources */,
 				6ACF3A3B1E4AB49900BB0C82 /* AddAppViewController.swift in Sources */,
+				6A40848B1E52BFAD00811A61 /* AlternateTableViewCell.swift in Sources */,
 				6A8353C11E416D20004EEE2E /* AppTableViewController.swift in Sources */,
+				6A40848F1E52BFAD00811A61 /* SearchCountriesViewController.swift in Sources */,
+				6A4084921E52C10A00811A61 /* SearchAppsViewController.swift in Sources */,
+				6A4084941E52C3D700811A61 /* SearchAppsTableViewCell.swift in Sources */,
 				6A60561D1E51918400A59F0E /* AppFromSearchApi.swift in Sources */,
-				6A6088F41E5141070085F09F /* AlternateTableViewController.swift in Sources */,
-				6A6088F61E5141480085F09F /* AlternateTableViewCell.swift in Sources */,
-				6A6088F21E5139D60085F09F /* SearchAppsTableViewCell.swift in Sources */,
 				6AE1019F1E444DF4006A30CB /* NetworkManager.swift in Sources */,
+				6A40848C1E52BFAD00811A61 /* AlternateTableViewController.swift in Sources */,
 				6A6E37E11E3586FE0091105E /* App.swift in Sources */,
 				6ACF3A381E495AC200BB0C82 /* AppManager.swift in Sources */,
 				6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */,
 				6A8353C21E416D20004EEE2E /* ReviewTableViewCell.swift in Sources */,
 				6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */,
-				6A6088F01E5138230085F09F /* Countries.swift in Sources */,
+				6A40848E1E52BFAD00811A61 /* SearchCountriesTableViewCell.swift in Sources */,
 				6A35FC401E35CE7C008ED01F /* Review.swift in Sources */,
 				6ACF3A3D1E4AB4C800BB0C82 /* AddAppTableViewCell.swift in Sources */,
 				6A8353C51E416D20004EEE2E /* ReviewOptionsTableViewController.swift in Sources */,
 				6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */,
+				6A40848D1E52BFAD00811A61 /* Countries.swift in Sources */,
 				6A94886E1E2850BF00385FF3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

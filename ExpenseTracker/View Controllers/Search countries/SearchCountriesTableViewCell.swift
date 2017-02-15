@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchAppsTableViewCell: UITableViewCell {
+class SearchCountriesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

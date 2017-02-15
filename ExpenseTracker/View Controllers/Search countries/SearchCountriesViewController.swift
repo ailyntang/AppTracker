@@ -1,5 +1,5 @@
 //
-//  SearchAppsViewController.swift
+//  SearchCountriesViewController.swift
 //  ExpenseTracker
 //
 //  Created by Ai-Lyn Tang on 10/2/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SearchAppsViewController: UIViewController {
+class SearchCountriesViewController: UIViewController {
 
     @IBOutlet weak var countryTable: UITableView!
     
@@ -54,7 +54,7 @@ class SearchAppsViewController: UIViewController {
 
 
 
-extension SearchAppsViewController: UITableViewDataSource
+extension SearchCountriesViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -68,7 +68,7 @@ extension SearchAppsViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = countryTable.dequeueReusableCell(withIdentifier: "idCell") as! SearchAppsTableViewCell
+        let cell = countryTable.dequeueReusableCell(withIdentifier: "idCell") as! SearchCountriesTableViewCell
         cell.textLabel?.text = ""
         cell.textLabel?.attributedText = NSAttributedString(string: "")
         
@@ -83,7 +83,7 @@ extension SearchAppsViewController: UITableViewDataSource
     }
 }
 
-extension SearchAppsViewController: UITableViewDelegate
+extension SearchCountriesViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
@@ -91,7 +91,7 @@ extension SearchAppsViewController: UITableViewDelegate
     }
 }
 
-extension SearchAppsViewController: UISearchResultsUpdating
+extension SearchCountriesViewController: UISearchResultsUpdating
 {
     func updateSearchResults(for searchController: UISearchController)
     {

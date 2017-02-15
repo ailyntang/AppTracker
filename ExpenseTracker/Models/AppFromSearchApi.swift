@@ -53,15 +53,16 @@ struct AppFromSearchApi {
         
         if let appsFromSearchApi = json["results"].array {
             for app in appsFromSearchApi {
+                
                 let trackId = app["trackId"].double
                 let trackName = app["trackName"].string
                 let artworkUrl60 = app["artworkUrl60"].string
                 let description = app["description"].string
-                let averageUserRatingForCurrentVersion = app["averageUserRatingForCurrentVersion"].double
+                let averageUserRatingForCurrentVersion = app["averageUserRatingForCurrentVersion"].double ?? 0.0
                 let currentVersionReleaseDate = app["currentVersionReleaseDate"].string
-                let releaseNotes = app["releaseNotes"].string
+                let releaseNotes = app["releaseNotes"].string ?? ""
                 
-                newApp = AppFromSearchApi(trackId: trackId!, trackName: trackName!, artworkUrl60: artworkUrl60!, description: description!, averageUserRatingForCurrentVersion: averageUserRatingForCurrentVersion, currentVersionReleaseDate: currentVersionReleaseDate!, releaseNotes: releaseNotes!)
+                newApp = AppFromSearchApi(trackId: trackId!, trackName: trackName!, artworkUrl60: artworkUrl60!, description: description!, averageUserRatingForCurrentVersion: averageUserRatingForCurrentVersion, currentVersionReleaseDate: currentVersionReleaseDate!, releaseNotes: releaseNotes)
                 
                 appsFromSearchApiArray.append(newApp!)
             }
