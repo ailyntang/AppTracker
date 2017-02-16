@@ -21,7 +21,10 @@ class AppTableViewController: UITableViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        print("inside View Will Appear")
         super.viewWillAppear(animated)
+        print(appManager.getAppIds())
+        print(appManager.defaults.stringArray(forKey: "appIds"))
         
         self.apps.removeAll()
         for appId in appManager.getAppIds() {
@@ -67,15 +70,6 @@ class AppTableViewController: UITableViewController {
     
     // This function is called when the "save" button is pressed on "New App" scene
     @IBAction func unwindToAppList(sender: UIStoryboardSegue) {
-        
-//        let appIdArray = Setup.SetupVariables.defaults.stringArray(forKey: Setup.SetupVariables.appIdUserDefaultKey)
-//        
-//        if let newAppId = appIdArray!.last {
-//            NetworkManager.loadAppAsync(appId: newAppId, completionHandler: { newApp in
-//                self.apps.append(newApp!)
-//                self.tableView.reloadData()
-//            })
-//        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -83,10 +77,15 @@ class AppTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
         
+//        let navVC = segue.destination as? UINavigationController
+//        let addAppVC = navVC?.viewControllers.first as? AddAppViewController
+//        addAppVC?.appManager = self.appManager
+        
         let navVC = segue.destination as? UINavigationController
-        let addAppVC = navVC?.viewControllers.first as? AddAppViewController
+        let addAppVC = navVC?.viewControllers.first as? SearchAppsViewController
         addAppVC?.appManager = self.appManager
         
+        print("inside prepare for segue")
     }
 
 }

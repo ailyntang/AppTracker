@@ -225,11 +225,11 @@
 				6ACA27781E404FA900E16AFB /* Models */,
 				6ACA27771E404DC700E16AFB /* View Controllers */,
 				6A94886D1E2850BF00385FF3 /* AppDelegate.swift */,
+				6ACF3A371E495AC200BB0C82 /* AppManager.swift */,
 				6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */,
 				6A9488711E2850BF00385FF3 /* Main.storyboard */,
 				6A9488741E2850BF00385FF3 /* Assets.xcassets */,
 				6A9488791E2850BF00385FF3 /* Info.plist */,
-				6ACF3A371E495AC200BB0C82 /* AppManager.swift */,
 			);
 			path = ExpenseTracker;
 			sourceTree = "<group>";

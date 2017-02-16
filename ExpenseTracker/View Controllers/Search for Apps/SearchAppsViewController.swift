@@ -13,6 +13,11 @@ class SearchAppsViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var appSearchResultsTable: UITableView!
     var appArrayFromSearchResults: [AppFromSearchApi] = []
+    var appManager: AppManager?
+
+    // I don't know how to initiatlise this
+    //    var appManager: AppManager!
+    
     
     var appSearchController: UISearchController = ({
         let controller = UISearchController(searchResultsController: nil)
@@ -31,6 +36,8 @@ class SearchAppsViewController: UIViewController {
         appSearchResultsTable.tableHeaderView = appSearchController.searchBar
         appSearchController.searchResultsUpdater = self
         appSearchResultsTable.rowHeight = 90.0
+        
+        
 
     }
 
@@ -70,7 +77,28 @@ extension SearchAppsViewController: UITableViewDataSource {
 extension SearchAppsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+//        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedRow = (tableView.indexPathForSelectedRow?.last)! as Int
+        let selectedApp = appArrayFromSearchResults[selectedRow]
+        let selectedAppId = String(Int(selectedApp.trackId))
+        let defaults = UserDefaults.standard
+        
+        
+        
+        
+        var appIdsForUserDefaults = defaults.stringArray(forKey: "appIds")
+        appIdsForUserDefaults!.append(selectedAppId)
+        defaults.set(appIdsForUserDefaults, forKey: "appIds")
+        
+        let readArray = defaults.stringArray(forKey: "appIds")
+        print(readArray)
+        
+//        let test2 = defaults.array(forKey: "appJsonResults")
+//        print(test2)
+    
+        
+        
+        
     }
 }
 
