@@ -23,12 +23,6 @@ struct App {
     
     init?(trackName: String, artworkUrl60: String, averageUserRatingForCurrentVersion: Double?, currentVersionReleaseDate: String) {
         
-        // Initialization should fail if for the following conditions
-//        if appName.isEmpty || currentVersionAppStoreRating < 0 {
-//            return nil
-//        }
-//
-        
         let rating = averageUserRatingForCurrentVersion ?? 0.0
         
         // Takes the date as a string and converts it to a date
@@ -62,7 +56,11 @@ struct App {
             return newApp!
             
         } else {
-            let dummyApp: App? = nil
+
+            // Sometimes the iTunes lookup fails on the trackId. I have only encountered this once so far with the 9Now app: 542088539
+            // If this happens, it will load the dummyApp instead
+            let dummyApp = App(trackName: "Uh oh, something went wrong", artworkUrl60: "http://is5.mzstatic.com/image/thumb/Purple111/v4/b4/75/7e/b4757e9e-8724-c645-5d18-ad27c3534284/source/100x100bb.jpg", averageUserRatingForCurrentVersion: 1.0, currentVersionReleaseDate: "2001-01-01T07:00:00Z")
+            
             return dummyApp!
         }
         

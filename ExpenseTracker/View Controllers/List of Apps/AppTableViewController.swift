@@ -13,19 +13,28 @@ class AppTableViewController: UITableViewController {
     let cellIdentifier = "AppTableViewCell"
     var apps: [App] = []
     
-    var appManager: AppManager!
+    var appManager: AppManager! // This is not used or initialised anywhere
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
-        print("inside View Will Appear")
         super.viewWillAppear(animated)
-        print(appManager.getAppIds())
-        print(appManager.defaults.stringArray(forKey: "appIds"))
         
+        // I didn't know how to initialise appManager so I redefined the user defaults
+//        let defaults = UserDefaults.standard
+        
+        
+        
+        
+        // This works but it's the old way using iTunes lookup track ID
         self.apps.removeAll()
         for appId in appManager.getAppIds() {
             NetworkManager.loadAppAsync(appId: appId, completionHandler: { myApp in
@@ -33,6 +42,11 @@ class AppTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
+        
+        
+        
+        
+        
     }
 
     
@@ -76,14 +90,10 @@ class AppTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         super.prepare(for: segue, sender: sender)
-        
+
 //        let navVC = segue.destination as? UINavigationController
-//        let addAppVC = navVC?.viewControllers.first as? AddAppViewController
+//        let addAppVC = navVC?.viewControllers.first as? SearchAppsViewController
 //        addAppVC?.appManager = self.appManager
-        
-        let navVC = segue.destination as? UINavigationController
-        let addAppVC = navVC?.viewControllers.first as? SearchAppsViewController
-        addAppVC?.appManager = self.appManager
         
         print("inside prepare for segue")
     }

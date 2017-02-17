@@ -13,10 +13,7 @@ class SearchAppsViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var appSearchResultsTable: UITableView!
     var appArrayFromSearchResults: [AppFromSearchApi] = []
-    var appManager: AppManager?
-
-    // I don't know how to initiatlise this
-    //    var appManager: AppManager!
+    var appManager: AppManager?     // I don't know how to initiatlise this
     
     
     var appSearchController: UISearchController = ({
@@ -37,8 +34,6 @@ class SearchAppsViewController: UIViewController {
         appSearchController.searchResultsUpdater = self
         appSearchResultsTable.rowHeight = 90.0
         
-        
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,28 +72,15 @@ extension SearchAppsViewController: UITableViewDataSource {
 extension SearchAppsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
         let selectedRow = (tableView.indexPathForSelectedRow?.last)! as Int
         let selectedApp = appArrayFromSearchResults[selectedRow]
         let selectedAppId = String(Int(selectedApp.trackId))
+        
+        // I didn't know how to initialise appManager so I redefined the user defaults
         let defaults = UserDefaults.standard
-        
-        
-        
-        
         var appIdsForUserDefaults = defaults.stringArray(forKey: "appIds")
         appIdsForUserDefaults!.append(selectedAppId)
         defaults.set(appIdsForUserDefaults, forKey: "appIds")
-        
-        let readArray = defaults.stringArray(forKey: "appIds")
-        print(readArray)
-        
-//        let test2 = defaults.array(forKey: "appJsonResults")
-//        print(test2)
-    
-        
-        
-        
     }
 }
 
