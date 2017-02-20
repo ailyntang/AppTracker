@@ -28,7 +28,14 @@ class AppTableViewCell: UITableViewCell {
         let newDateAsString = dateFormatter.string(from: app.currentVersionReleaseDate)
         
         nameLabel.text = app.trackName
-        photoImageView.load_image(urlString: app.artworkUrl60)
+        
+        if let imageUrl = app.artworkUrl60 {
+            // handle the case where you have an url
+            photoImageView.load_image(urlString: imageUrl)
+        } else {
+            // handle the case where no image exists for this app
+            photoImageView.image = #imageLiteral(resourceName: "defaultPhoto") 
+        }
         ratingControl.rating = app.averageUserRatingForCurrentVersion!
         dateLabel.text = newDateAsString
         
@@ -39,18 +46,14 @@ class AppTableViewCell: UITableViewCell {
 
 extension UIImageView {
     func load_image(urlString: String) {
-        
         if let url = URL(string: urlString) {
-            
             DispatchQueue.global(qos: .background).async {
                 if let data = try? Data(contentsOf: url, options: NSData.ReadingOptions.uncached) {
-                    
                     DispatchQueue.main.async {
                         self.image = UIImage(data: data)
                     }
                 }
             }
-            
         }
     }
 }

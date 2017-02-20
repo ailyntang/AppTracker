@@ -16,24 +16,32 @@ class SearchAppsViewController: UIViewController {
     var appManager: AppManager?     // I don't know how to initiatlise this
     
     
-    var appSearchController: UISearchController = ({
+    var appSearchController: UISearchController!
+    
+    
+    func setupSearch() {
+        
+        
         let controller = UISearchController(searchResultsController: nil)
-        controller.hidesNavigationBarDuringPresentation = false
+        controller.hidesNavigationBarDuringPresentation = true
         controller.dimsBackgroundDuringPresentation = false
         controller.searchBar.searchBarStyle = .minimal
         controller.searchBar.sizeToFit()
-        return controller
-    })()
-    
-    
+//        controller.searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 10)
+        appSearchController = controller
+        
+        definesPresentationContext = true
+        extendedLayoutIncludesOpaqueBars  = true
+    }
     // MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearch()
+        
         appSearchResultsTable.tableHeaderView = appSearchController.searchBar
         appSearchController.searchResultsUpdater = self
         appSearchResultsTable.rowHeight = 90.0
-        
     }
 
     override func didReceiveMemoryWarning() {
