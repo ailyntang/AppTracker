@@ -9,30 +9,28 @@
 import Foundation
 
 class AppManager {
-
-    let defaults = UserDefaults.standard
-    private let appIdUserDefaultKey = "appIds"
-    private var appIdArray: [String] = []
+  
+  let defaults = UserDefaults.standard
+  private let appIdUserDefaultKey = "appIds"
+  private var appIdArray: [String] = []
+  
+  func getAppIds() -> [String] {
+    return appIdArray
+  }
+  
+  init() {
+    let clashOfClansId = "529479190"
+    let colesId = "529118855"
+    let citylinkId = "1091477735"
+    let defaultApps = [clashOfClansId, colesId, citylinkId]
     
-    func getAppIds() -> [String] {
-        appIdArray = defaults.stringArray(forKey: appIdUserDefaultKey)!
-        return appIdArray
-    }
-    
-    init() {
-        let clashOfClansId = "529479190"
-        let colesId = "529118855"
-        let citylinkId = "1091477735"
-        
-        appIdArray = [clashOfClansId, colesId, citylinkId]
-        defaults.set(appIdArray, forKey: appIdUserDefaultKey)
-    }
-
-    
-    func addAppToList(appId: String) {
-        appIdArray.append(appId)
-        defaults.set(appIdArray, forKey: appIdUserDefaultKey)
-    }
-    
-    
+    appIdArray = defaults.stringArray(forKey: appIdUserDefaultKey) ?? defaultApps
+  }
+  
+  func addAppToList(appId: String) {
+    appIdArray.append(appId)
+    defaults.set(appIdArray, forKey: appIdUserDefaultKey)
+  }
+  
+  
 }
