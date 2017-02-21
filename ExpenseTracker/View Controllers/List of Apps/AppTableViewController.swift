@@ -17,24 +17,12 @@ class AppTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // I didn't know how to initialise appManager so I redefined the user defaults
-//        let defaults = UserDefaults.standard
-        
-        
-        
-        
-        // This works but it's the old way using iTunes lookup track ID
         self.apps.removeAll()
         for appId in appManager.getAppIds() {
             NetworkManager.loadAppAsync(appId: appId, completionHandler: { myApp in
@@ -42,11 +30,6 @@ class AppTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
-        
-        
-        
-        
-        
     }
 
     
@@ -95,7 +78,7 @@ class AppTableViewController: UITableViewController {
 //        let addAppVC = navVC?.viewControllers.first as? SearchAppsViewController
 //        addAppVC?.appManager = self.appManager
         
-        print("inside prepare for segue")
+
     }
 
 }

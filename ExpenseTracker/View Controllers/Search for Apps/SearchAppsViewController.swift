@@ -27,10 +27,9 @@ class SearchAppsViewController: UIViewController {
         controller.dimsBackgroundDuringPresentation = false
         controller.searchBar.searchBarStyle = .minimal
         controller.searchBar.sizeToFit()
-//        controller.searchBar.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 10)
         appSearchController = controller
         
-        definesPresentationContext = true
+        definesPresentationContext = true       // stops the search bar from appearing on other VCs
         extendedLayoutIncludesOpaqueBars  = true
     }
     // MARK: Functions

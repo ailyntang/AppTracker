@@ -8,8 +8,9 @@
 
 import Foundation
 import SwiftyJSON
+import os.log
 
-struct App {
+class App: NSObject {
     
     // MARK: Properties
     
@@ -18,6 +19,14 @@ struct App {
     var averageUserRatingForCurrentVersion: Double?
     var currentVersionReleaseDate: Date                 // the initialisation takes a date string and returns a date
     
+    
+    // MARK: Types
+    struct PropertyKey{
+        static let trackName = "trackName"
+        static let artworkUrl60 = "artworkUrl60"
+        static let averageUserRatingForCurrentVersion = "averageUserRatingForCurrentVersion"
+        static let currentVersionReleaseDate = "currentVersionReleaseDate"
+    }
     
     // MARK: Initialization
     
@@ -66,13 +75,23 @@ struct App {
         
     }
     
-    
-
+    static func saveApps() {
+        var apps = [App]()
+        
+//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(apps, toFile: self.ArchiveURL.path)
+    }
        
     
 }
 
-
+//extension App: NSCoding {
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(trackName, forKey: PropertyKey.trackName)
+//        aCoder.encode(artworkUrl60, forKey: PropertyKey.artworkUrl60)
+//        aCoder.encode(averageUserRatingForCurrentVersion, forKey: PropertyKey.averageUserRatingForCurrentVersion)
+//        aCoder.encode(currentVersionReleaseDate, forKey: PropertyKey.currentVersionReleaseDate)
+//    }
+//}
 
     
     

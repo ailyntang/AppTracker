@@ -31,8 +31,6 @@
 		6A9488781E2850BF00385FF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9488761E2850BF00385FF3 /* LaunchScreen.storyboard */; };
 		6A9488831E2850C000385FF3 /* ExpenseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */; };
 		6ACF3A381E495AC200BB0C82 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A371E495AC200BB0C82 /* AppManager.swift */; };
-		6ACF3A3B1E4AB49900BB0C82 /* AddAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */; };
-		6ACF3A3D1E4AB4C800BB0C82 /* AddAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */; };
 		6ADDDD321E3AF24200B5A79F /* ReviewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */; };
 		6AE101961E4409CD006A30CB /* deconstructItunesReviews.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */; };
 		6AE101971E4409CD006A30CB /* itunesColes.json in Resources */ = {isa = PBXBuildFile; fileRef = 6AE101921E4409CD006A30CB /* itunesColes.json */; };
@@ -84,8 +82,6 @@
 		6A9488821E2850C000385FF3 /* ExpenseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerTests.swift; sourceTree = "<group>"; };
 		6A9488841E2850C000385FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6ACF3A371E495AC200BB0C82 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppViewController.swift; sourceTree = "<group>"; };
-		6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppTableViewCell.swift; sourceTree = "<group>"; };
 		6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOption.swift; sourceTree = "<group>"; };
 		6AE101911E4409CD006A30CB /* deconstructItunesReviews.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deconstructItunesReviews.json; sourceTree = "<group>"; };
 		6AE101921E4409CD006A30CB /* itunesColes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = itunesColes.json; sourceTree = "<group>"; };
@@ -248,7 +244,6 @@
 			children = (
 				6A4084901E52C01500811A61 /* Search for Apps */,
 				6A4084851E52BFAD00811A61 /* Search countries */,
-				6ACF3A391E4AB49900BB0C82 /* Add new app */,
 				6A8353B71E416D20004EEE2E /* List of Apps */,
 				6A8353BA1E416D20004EEE2E /* List of Reviews */,
 				6A8353BD1E416D20004EEE2E /* Review Options */,
@@ -265,15 +260,6 @@
 				6ADDDD311E3AF24200B5A79F /* ReviewOption.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		6ACF3A391E4AB49900BB0C82 /* Add new app */ = {
-			isa = PBXGroup;
-			children = (
-				6ACF3A3C1E4AB4C800BB0C82 /* AddAppTableViewCell.swift */,
-				6ACF3A3A1E4AB49900BB0C82 /* AddAppViewController.swift */,
-			);
-			path = "Add new app";
 			sourceTree = "<group>";
 		};
 		6AE101901E4409CD006A30CB /* Data */ = {
@@ -507,7 +493,6 @@
 			files = (
 				6A8353C41E416D20004EEE2E /* ReviewOptionsTableViewCell.swift in Sources */,
 				6A8353C31E416D20004EEE2E /* ReviewTableViewController.swift in Sources */,
-				6ACF3A3B1E4AB49900BB0C82 /* AddAppViewController.swift in Sources */,
 				6A40848B1E52BFAD00811A61 /* AlternateTableViewCell.swift in Sources */,
 				6A8353C11E416D20004EEE2E /* AppTableViewController.swift in Sources */,
 				6A40848F1E52BFAD00811A61 /* SearchCountriesViewController.swift in Sources */,
@@ -523,7 +508,6 @@
 				6A8353C01E416D20004EEE2E /* AppTableViewCell.swift in Sources */,
 				6A40848E1E52BFAD00811A61 /* SearchCountriesTableViewCell.swift in Sources */,
 				6A35FC401E35CE7C008ED01F /* Review.swift in Sources */,
-				6ACF3A3D1E4AB4C800BB0C82 /* AddAppTableViewCell.swift in Sources */,
 				6A8353C51E416D20004EEE2E /* ReviewOptionsTableViewController.swift in Sources */,
 				6A8353B61E416C31004EEE2E /* RatingControl.swift in Sources */,
 				6A40848D1E52BFAD00811A61 /* Countries.swift in Sources */,
