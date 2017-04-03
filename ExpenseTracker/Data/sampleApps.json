@@ -1,0 +1,25 @@
+{
+    "apps": [
+             {
+             "name": "Coles",
+             "photo": "http://is5.mzstatic.com/image/thumb/Purple71/v4/4b/ce/90/4bce9064-f2e6-a93e-8921-b4881b03a651/source/100x100bb.jpg",
+             "rating": 5,
+             "date": "2016-06-08T07:00:00Z"
+             },
+             {
+             "name": "Opal",
+             "photo": "http://is1.mzstatic.com/image/thumb/Purple71/v4/c8/07/2a/c8072a55-5ee4-3ba4-7ebb-f8752384abe0/source/100x100bb.jpg",
+             "rating": 4,
+             "date": "2016-12-18T07:00:00Z"
+             },
+             {
+             "name": "CityLink",
+             "photo": "http://is5.mzstatic.com/image/thumb/Purple111/v4/b4/75/7e/b4757e9e-8724-c645-5d18-ad27c3534284/source/100x100bb.jpg",
+             "rating": 3,
+             "date": "2017-02-27T07:00:00Z"
+             }
+             ],
+    "dataTitle": "Sample Apps",
+    "swiftVersion": 3
+}
+
