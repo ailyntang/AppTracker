@@ -15,6 +15,7 @@ class AppManager {
   private var appIdArray: [String] = []
   
   func getAppIds() -> [String] {
+    appIdArray = defaults.stringArray(forKey: appIdUserDefaultKey)!
     return appIdArray
   }
   
